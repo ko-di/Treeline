@@ -46,8 +46,7 @@ export default function Setup() {
           Open Terminal, paste this, and change <code>my-idea</code> to
           whatever you want the folder called.
         </p>
-        <pre className="term" tabIndex={0}>{`mkdir my-idea && curl -sL https://github.com/ko-di/forest-kit/archive/refs/heads/main.tar.gz \\
-  | tar -xz --strip-components=1 -C my-idea && cd my-idea && ./scripts/setup.sh`}</pre>
+        <pre className="term" tabIndex={0}>{`mkdir -p my-idea && curl -fsSL https://github.com/ko-di/forest-kit/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1 -C my-idea && cd my-idea && ./scripts/setup.sh`}</pre>
         <p>
           It downloads the kit, puts it in a folder, moves into it and runs
           setup. It leaves you where you need to be, so there is no path to
@@ -104,8 +103,12 @@ cd my-idea && ./scripts/setup.sh`}</pre>
               <td>Terminal is not in your project folder. Run <code>pwd</code> to see where it is, then <code>cd</code> to the right place. Dragging the folder in after typing <code>cd</code> is the reliable way.</td>
             </tr>
             <tr>
+              <td><code>mkdir: my-idea: File exists</code>, then nothing</td>
+              <td>The chain stops at the first failure. Delete that folder, or change <code>my-idea</code> to a new name in the command.</td>
+            </tr>
+            <tr>
               <td>Nothing seems to happen</td>
-              <td>You probably typed <code>path/to/your-folder</code> literally. That is a placeholder, not a path.</td>
+              <td>On the manual route, you probably typed <code>path/to/your-folder</code> literally. That is a placeholder, not a path.</td>
             </tr>
             <tr>
               <td>Claude Code not on your PATH</td>
