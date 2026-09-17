@@ -62,7 +62,18 @@ export default function Setup() {
           <li>
             <span className="n">03</span>
             <div>
-              <h3>Open Terminal and run setup</h3>
+              <h3>Point Terminal at that folder</h3>
+              <p className="dim" style={{ margin: 0 }}>
+                Type <code>cd</code> and a space, then drag the folder from
+                Finder into the Terminal window. It fills in the path for you.
+                Press enter.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span className="n">04</span>
+            <div>
+              <h3>Run setup</h3>
               <p className="dim" style={{ margin: 0 }}>
                 It makes the folders the kit writes into, says what each one is
                 for, and checks you have what you need.
@@ -70,9 +81,13 @@ export default function Setup() {
             </div>
           </li>
         </ol>
-        <p className="meta">In Terminal, on macOS or Linux:</p>
-        <pre className="term" tabIndex={0}>{`cd path/to/your-folder
+        <pre className="term" tabIndex={0}>{`cd            ← drag the folder here, then press enter
 ./scripts/setup.sh`}</pre>
+        <p className="meta">
+          If you would rather type it, the path looks like{" "}
+          <code>~/Downloads/my-idea</code>. It has to be where your folder
+          actually is, not the words &ldquo;path to your folder&rdquo;.
+        </p>
         <p className="meta">
           Windows is not tested yet. There is a PowerShell version in the repo
           and WSL or Git Bash should run the script above, but neither has been
@@ -117,7 +132,11 @@ export default function Setup() {
             </tr>
             <tr>
               <td><code>no such file or directory</code></td>
-              <td>Wrong folder. <code>cd</code> into the unzipped folder first, the one with <code>scripts</code> inside it.</td>
+              <td>Terminal is not in your project folder. Run <code>pwd</code> to see where it is, then <code>cd</code> to the right place. Dragging the folder in after typing <code>cd</code> is the reliable way.</td>
+            </tr>
+            <tr>
+              <td>Nothing seems to happen</td>
+              <td>You probably typed <code>path/to/your-folder</code> literally. That is a placeholder, not a path.</td>
             </tr>
             <tr>
               <td>Claude Code not on your PATH</td>
