@@ -41,35 +41,29 @@ export default function Setup() {
 
       <section>
         <p className="label">Install</p>
-        <h2>One command.</h2>
+        <h2>One command. It asks where to put it.</h2>
+        <pre className="term" tabIndex={0}>{`curl -fsSL https://raw.githubusercontent.com/ko-di/forest-kit/main/install.sh | bash`}</pre>
         <p>
-          First go to where you keep projects. Terminal opens in your home
-          folder, and every route below makes the project folder wherever you
-          currently are. Nothing asks you to pick.
+          It asks what to call the project and where it should live, then
+          downloads the kit, unpacks it there and runs setup. Press enter at
+          either question to take the default.
         </p>
-        <pre className="term" tabIndex={0}>{`cd ~/Documents          # or wherever you want it to live`}</pre>
+        <pre className="term" tabIndex={0}>{`  forest-kit
+  ------------------------------------------------
+
+  Project name [my-idea]:
+  Where should it live [~/Documents]:`}</pre>
         <p>
-          Then paste this, changing <code>my-idea</code> to whatever you want
-          the folder called.
-        </p>
-        <pre className="term" tabIndex={0}>{`mkdir -p my-idea && curl -fsSL https://github.com/ko-di/forest-kit/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1 -C my-idea && cd my-idea && ./scripts/setup.sh`}</pre>
-        <p>
-          It downloads the kit, puts it in a folder, moves into it and runs
-          setup. It leaves you where you need to be, so there is no path to
-          type. Then type <code>/pack</code>.
+          Then <code>cd</code> to the folder it names and type{" "}
+          <code>/pack</code>.
         </p>
         <p className="meta">
-          If you already use GitHub and would rather start from a repo of your
-          own:
-        </p>
-        <pre className="term" tabIndex={0}>{`gh repo create my-idea --template ko-di/forest-kit --clone
-cd my-idea && ./scripts/setup.sh`}</pre>
-        <p className="meta">
-          Or do it by hand:{" "}
-          <a href="https://github.com/ko-di/forest-kit/archive/refs/heads/main.zip">download the ZIP</a>,
-          unzip, rename the folder, then type <code>cd</code> and a space, drag
-          the folder in from Finder, press enter, and run{" "}
-          <code>./scripts/setup.sh</code>.
+          Two other ways in, if you prefer. From a repo of your own:{" "}
+          <code>gh repo create my-idea --template ko-di/forest-kit --clone</code>.
+          Or{" "}
+          <a href="https://github.com/ko-di/forest-kit/archive/refs/heads/main.zip">download the ZIP</a>{" "}
+          and run <code>./scripts/setup.sh</code> inside it. Both put the
+          project wherever Terminal currently is, and neither asks.
         </p>
       </section>
 
