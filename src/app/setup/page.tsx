@@ -41,61 +41,30 @@ export default function Setup() {
 
       <section>
         <p className="label">Install</p>
-        <h2>Three steps.</h2>
-        <ol className="steps">
-          <li>
-            <span className="n">01</span>
-            <div>
-              <h3>
-                <a href="https://github.com/ko-di/forest-kit/archive/refs/heads/main.zip">Download the kit as a ZIP</a>
-              </h3>
-              <p className="dim" style={{ margin: 0 }}>No account needed.</p>
-            </div>
-          </li>
-          <li>
-            <span className="n">02</span>
-            <div>
-              <h3>Unzip it, rename the folder to your project</h3>
-              <p className="dim" style={{ margin: 0 }}>The folder name becomes the project name.</p>
-            </div>
-          </li>
-          <li>
-            <span className="n">03</span>
-            <div>
-              <h3>Point Terminal at that folder</h3>
-              <p className="dim" style={{ margin: 0 }}>
-                Type <code>cd</code> and a space, then drag the folder from
-                Finder into the Terminal window. It fills in the path for you.
-                Press enter.
-              </p>
-            </div>
-          </li>
-          <li>
-            <span className="n">04</span>
-            <div>
-              <h3>Run setup</h3>
-              <p className="dim" style={{ margin: 0 }}>
-                It makes the folders the kit writes into, says what each one is
-                for, and checks you have what you need.
-              </p>
-            </div>
-          </li>
-        </ol>
-        <pre className="term" tabIndex={0}>{`cd            ← drag the folder here, then press enter
-./scripts/setup.sh`}</pre>
-        <p className="meta">
-          If you would rather type it, the path looks like{" "}
-          <code>~/Downloads/my-idea</code>. It has to be where your folder
-          actually is, not the words &ldquo;path to your folder&rdquo;.
-        </p>
-        <p className="meta">
-          Windows is not tested yet. There is a PowerShell version in the repo
-          and WSL or Git Bash should run the script above, but neither has been
-          tried on an actual Windows machine.
-        </p>
+        <h2>One command.</h2>
         <p>
-          Then open the folder and type <code>/pack</code>. Setup can be run
-          again at any time without losing work.
+          Open Terminal, paste this, and change <code>my-idea</code> to
+          whatever you want the folder called.
+        </p>
+        <pre className="term" tabIndex={0}>{`mkdir my-idea && curl -sL https://github.com/ko-di/forest-kit/archive/refs/heads/main.tar.gz \\
+  | tar -xz --strip-components=1 -C my-idea && cd my-idea && ./scripts/setup.sh`}</pre>
+        <p>
+          It downloads the kit, puts it in a folder, moves into it and runs
+          setup. It leaves you where you need to be, so there is no path to
+          type. Then type <code>/pack</code>.
+        </p>
+        <p className="meta">
+          If you already use GitHub and would rather start from a repo of your
+          own:
+        </p>
+        <pre className="term" tabIndex={0}>{`gh repo create my-idea --template ko-di/forest-kit --clone
+cd my-idea && ./scripts/setup.sh`}</pre>
+        <p className="meta">
+          Or do it by hand:{" "}
+          <a href="https://github.com/ko-di/forest-kit/archive/refs/heads/main.zip">download the ZIP</a>,
+          unzip, rename the folder, then type <code>cd</code> and a space, drag
+          the folder in from Finder, press enter, and run{" "}
+          <code>./scripts/setup.sh</code>.
         </p>
       </section>
 
