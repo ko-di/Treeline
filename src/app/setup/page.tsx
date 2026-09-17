@@ -43,8 +43,14 @@ export default function Setup() {
         <p className="label">Install</p>
         <h2>One command.</h2>
         <p>
-          Open Terminal, paste this, and change <code>my-idea</code> to
-          whatever you want the folder called.
+          First go to where you keep projects. Terminal opens in your home
+          folder, and every route below makes the project folder wherever you
+          currently are. Nothing asks you to pick.
+        </p>
+        <pre className="term" tabIndex={0}>{`cd ~/Documents          # or wherever you want it to live`}</pre>
+        <p>
+          Then paste this, changing <code>my-idea</code> to whatever you want
+          the folder called.
         </p>
         <pre className="term" tabIndex={0}>{`mkdir -p my-idea && curl -fsSL https://github.com/ko-di/forest-kit/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1 -C my-idea && cd my-idea && ./scripts/setup.sh`}</pre>
         <p>
@@ -101,6 +107,10 @@ cd my-idea && ./scripts/setup.sh`}</pre>
             <tr>
               <td><code>no such file or directory</code></td>
               <td>Terminal is not in your project folder. Run <code>pwd</code> to see where it is, then <code>cd</code> to the right place. Dragging the folder in after typing <code>cd</code> is the reliable way.</td>
+            </tr>
+            <tr>
+              <td>It installed somewhere unexpected</td>
+              <td>Every route uses the folder Terminal is currently in. Run <code>pwd</code> before installing to see where that is.</td>
             </tr>
             <tr>
               <td><code>mkdir: my-idea: File exists</code>, then nothing</td>
