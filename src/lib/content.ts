@@ -131,7 +131,7 @@ export const CHECKS: { when: string; what: string }[] = [
  * them and fails if they drift. A site describing a version nobody can download is worse
  * than a site with no version on it at all.
  */
-export const KIT_VERSION = "1.2.0";
+export const KIT_VERSION = "1.3.1";
 
 /**
  * Thirteen verbs exist; two have to be remembered. The kit runs most of them
@@ -173,6 +173,13 @@ export const COMMANDS: {
       { cmd: "/summit", does: "Verify what actually went live, and write SUMMIT.md" },
       { cmd: "/retro", does: "What worked, what did not, what to keep" },
       { cmd: "/handoff", does: "Package the folder for a client. Client projects only" },
+    ],
+  },
+  {
+    group: "Housekeeping",
+    note: "Looks after the kit, not the project. The kit tells you when it is worth running.",
+    items: [
+      { cmd: "/resupply", does: "Bring in a newer version of the kit. Your work is not touched" },
     ],
   },
 ];
