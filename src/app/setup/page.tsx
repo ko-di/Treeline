@@ -114,6 +114,10 @@ claude plugin install forest@forest-kit`}</pre>
         <table className="uses">
           <tbody>
             <tr>
+              <td><code>its network source differs</code></td>
+              <td>The directory is already added under that name, from an earlier attempt. Nothing is wrong: skip the add and run <code>/plugin install forest@forest-kit</code>. To start clean, <code>/plugin marketplace remove forest-kit</code> first.</td>
+            </tr>
+            <tr>
               <td><code>/forest:pack</code> isn&rsquo;t offered</td>
               <td>The plugin isn&rsquo;t installed in this session. Run the two install lines above, then try again.</td>
             </tr>
