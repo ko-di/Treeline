@@ -85,18 +85,18 @@ export default function Overview() {
         </p>
         <p>
           <strong>One gate sits between them.</strong> When Discover closes,{" "}
-          <code>/forest:weather</code> reads your notes and returns press on, reroute,
+          <code>/weather</code> reads your notes and returns press on, reroute,
           or turn back, weighing each claim by whether you watched it, heard it,
           reasoned it, or assumed it. Every reading names at least two routes
           onward, and you can overrule any of them. The override is written down
-          and quoted back to you at <code>/forest:ship</code>, against what you said you
+          and quoted back to you at <code>/ship</code>, against what you said you
           would regret.
         </p>
         <p>
           <strong>Ship closes the loop.</strong> Before anything goes out you are
           asked what you expect to regret in three weeks.{" "}
           <code>SUMMIT.md</code> carries a reflection to answer three months on,
-          and <code>/forest:retro</code> names what to take to the next project.
+          and <code>/retro</code> names what to take to the next project.
         </p>
       </section>
 
@@ -126,17 +126,16 @@ export default function Overview() {
       </section>
 
       <section>
-        <p className="label">Install</p>
-        <p>Two steps, in Terminal or inside Claude Code. Any folder will do.</p>
-        <pre className="term" tabIndex={0}>{`claude plugin marketplace add ko-di/forest-kit
-claude plugin install forest@forest-kit`}</pre>
-        <p>
-          The commands are then there in every session. Type{" "}
-          <code>/forest:pack</code> and it asks what to call the project and
-          where to keep it, then makes the folder for you. You need{" "}
-          <a href="https://claude.com/claude-code">Claude Code</a>, or Cursor
-          with the Claude Code extension. No download, no GitHub account, no
-          git.
+        <p className="label">Start a project</p>
+        <ol className="plain">
+          <li><a href="https://github.com/ko-di/forest-kit/releases/latest/download/forest.zip">Download forest</a>.</li>
+          <li>Unzip it and rename the folder after your idea.</li>
+          <li>Open the folder in Claude Code, in the Claude app.</li>
+          <li>Type <code>/pack</code>.</li>
+        </ol>
+        <p className="meta">
+          You need the <a href="https://claude.com/download">Claude app</a>. No
+          Terminal, no GitHub account, nothing to install.
         </p>
         <Next href="/setup" label="Setup, first session and project structure" />
       </section>

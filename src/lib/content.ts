@@ -22,7 +22,7 @@ export const CAMPS: Camp[] = [
     slug: "intake",
     name: "Intake",
     summary: "Your role, who this helps, and the first shape of the idea.",
-    use: "Start here. `/forest:pack` scaffolds the folder and asks the questions the rest builds on.",
+    use: "Start here. `/pack` scaffolds the folder and asks the questions the rest builds on.",
     does: [
       "Sets your role, and how much explanation you want alongside the work",
       "Asks who it helps, and for someone you have actually met rather than a category. Recording that you do not know yet is a normal answer",
@@ -38,10 +38,10 @@ export const CAMPS: Camp[] = [
     summary: "Conversations, what they add up to, then an honest reading.",
     use: "The camp most often skipped, and the one the gate at the end of it measures.",
     does: [
-      "`/forest:scout` drafts an interview guide and waits while you go and have the conversations",
+      "`/scout` drafts an interview guide and waits while you go and have the conversations",
       "Notes land in `research/raw/`, one file per session, each recording the method it came from",
-      "`/forest:gather` looks for patterns across notes rather than within one, and wants three before it calls anything a pattern",
-      "`/forest:weather` weighs the evidence by how you came by it: watched, heard, reasoned or assumed",
+      "`/gather` looks for patterns across notes rather than within one, and wants three before it calls anything a pattern",
+      "`/weather` weighs the evidence by how you came by it: watched, heard, reasoned or assumed",
     ],
     output: "research/raw/, camps/2-discover/synthesis.md",
   },
@@ -80,7 +80,7 @@ export const CAMPS: Camp[] = [
     slug: "build",
     name: "Build",
     summary: "Everything upstream becomes one brief, then the build works phase by phase.",
-    use: "`/forest:trail` walks it in order; `/forest:camp build` goes straight there.",
+    use: "`/trail` walks it in order; `/camp build` goes straight there.",
     does: [
       "Compiles `BRIEF.md` first: scope, phases, feel and the decisions already made, in one file that stands alone",
       "Splits the work into phases you could ship on their own, written into the map so they tick as they land",
@@ -95,12 +95,12 @@ export const CAMPS: Camp[] = [
     slug: "ship",
     name: "Ship",
     summary: "Checks, deploy, verification, and what you would do differently.",
-    use: "`/forest:ship`, then `/forest:summit`, then `/forest:retro`.",
+    use: "`/ship`, then `/summit`, then `/retro`.",
     does: [
-      "Before any of it, `/forest:ship` asks what you expect to regret in three weeks and records the answer",
+      "Before any of it, `/ship` asks what you expect to regret in three weeks and records the answer",
       "Then typecheck, tests and lint, a clean commit message, and a push",
-      "`/forest:summit` checks what actually went live: analytics, metadata, performance, accessibility",
-      "`SUMMIT.md` carries a reflection to answer three months out; `/forest:retro` names what to keep for next time",
+      "`/summit` checks what actually went live: analytics, metadata, performance, accessibility",
+      "`SUMMIT.md` carries a reflection to answer three months out; `/retro` names what to keep for next time",
     ],
     output: "SUMMIT.md, retro.md",
   },
@@ -132,11 +132,11 @@ export const CHECKS: { when: string; what: string }[] = [
  * every kit release. A site describing a version nobody can download is worse
  * than no version at all.
  */
-export const KIT_VERSION = "2.1.2";
+export const KIT_VERSION = "3.0.0";
 
 /**
  * Thirteen commands exist; two have to be remembered. The list below also has
- * the /forest:weather gate, which is not a command. The kit runs most of them
+ * the /weather gate, which is not a command. The kit runs most of them
  * for you at the point they apply, so listing them flat made the workflow read
  * heavier than it is. Grouped by who invokes them, not alphabetically.
  */
@@ -149,32 +149,32 @@ export const COMMANDS: {
     group: "The ones you type",
     note: "Two of these are the whole workflow. The rest are there when you want them.",
     items: [
-      { cmd: "/forest:pack", does: "Set up the project and run intake. The only way in" },
-      { cmd: "/forest:trail", does: "Move through the camps in order, running the right command at each" },
-      { cmd: "/forest:compass", does: "Suggest the next step from current state" },
-      { cmd: "/forest:map", does: "Show what is filled in and what is not" },
-      { cmd: "/forest:camp <name>", does: "Jump to one camp and work there, out of order" },
-      { cmd: "/forest:rationale", does: "Record why you made a call, the moment you make it" },
+      { cmd: "/pack", does: "Set up the project and run intake. The only way in" },
+      { cmd: "/trail", does: "Move through the camps in order, running the right command at each" },
+      { cmd: "/compass", does: "Suggest the next step from current state" },
+      { cmd: "/map", does: "Show what is filled in and what is not" },
+      { cmd: "/camp <name>", does: "Jump to one camp and work there, out of order" },
+      { cmd: "/rationale", does: "Record why you made a call, the moment you make it" },
     ],
   },
   {
     group: "The ones the trail runs for you",
     note: "You can type these. You do not need to know they exist.",
     items: [
-      { cmd: "/forest:scout", does: "Camp 2. Interviews, audience, the problem" },
-      { cmd: "/forest:gather", does: "Offered once three notes are filed. Synthesis" },
-      { cmd: "/forest:sketch", does: "Camp 4. Brand and visual direction from your references" },
-      { cmd: "/forest:weather", does: "The gate. Fires when Camp 2 closes, and can say turn back" },
-      { cmd: "/forest:ship", does: "Camp 6. Checks, commit, push. The first of four commands there" },
+      { cmd: "/scout", does: "Camp 2. Interviews, audience, the problem" },
+      { cmd: "/gather", does: "Offered once three notes are filed. Synthesis" },
+      { cmd: "/sketch", does: "Camp 4. Brand and visual direction from your references" },
+      { cmd: "/weather", does: "The gate. Fires when Camp 2 closes, and can say turn back" },
+      { cmd: "/ship", does: "Camp 6. Checks, commit, push. The first of four commands there" },
     ],
   },
   {
     group: "The ones offered at the summit",
     note: "Shipping is not the last thing that happens. None of these chains automatically, so you pick the moment.",
     items: [
-      { cmd: "/forest:summit", does: "Verify what actually went live, and write SUMMIT.md" },
-      { cmd: "/forest:retro", does: "What worked, what did not, what to keep" },
-      { cmd: "/forest:handoff", does: "Package the folder for a client. Client projects only" },
+      { cmd: "/summit", does: "Verify what actually went live, and write SUMMIT.md" },
+      { cmd: "/retro", does: "What worked, what did not, what to keep" },
+      { cmd: "/handoff", does: "Package the folder for a client. Client projects only" },
     ],
   },
 ];
@@ -208,7 +208,7 @@ export const AFTER: { step: string; what: string }[] = [
   },
   {
     step: "Build from it",
-    what: "`/forest:camp build` works the phases itself: the first one not ticked, read the requirement, build, review, commit, tick, next. One at a time or straight through. Or hand the brief to Claude in the browser, to v0 or Figma Make, or to a developer, and the phases still tick in `map.md`.",
+    what: "`/camp build` works the phases itself: the first one not ticked, read the requirement, build, review, commit, tick, next. One at a time or straight through. Or hand the brief to Claude in the browser, to v0 or Figma Make, or to a developer, and the phases still tick in `map.md`.",
   },
   {
     step: "Check it against the design",
@@ -216,18 +216,18 @@ export const AFTER: { step: string; what: string }[] = [
   },
   {
     step: "Ship",
-    what: "`/forest:ship` runs quality checks, commits and pushes. Before it does, it asks what you expect to regret in three weeks and records your answer. It does not deploy unless the project is already set up to deploy on push.",
+    what: "`/ship` runs quality checks, commits and pushes. Before it does, it asks what you expect to regret in three weeks and records your answer. It does not deploy unless the project is already set up to deploy on push.",
   },
   {
     step: "Verify what went live",
-    what: "`/forest:summit` checks the deployment: analytics, metadata, performance, accessibility. It writes `SUMMIT.md` and leaves three questions dated ninety days out.",
+    what: "`/summit` checks the deployment: analytics, metadata, performance, accessibility. It writes `SUMMIT.md` and leaves three questions dated ninety days out.",
   },
   {
     step: "Close it out",
-    what: "`/forest:retro` covers what worked, what did not, and three things to keep. `/forest:handoff` packages the folder for a client and verifies the access transfers. Neither runs on its own, so you pick the moment.",
+    what: "`/retro` covers what worked, what did not, and three things to keep. `/handoff` packages the folder for a client and verifies the access transfers. Neither runs on its own, so you pick the moment.",
   },
   {
     step: "Ninety days on, then a second version",
-    what: "Answer the `SUMMIT.md` questions cold. When you come back, `/forest:pack` opens cycle 2 on the same project: it archives the old map and retro, carries the research, decisions and design across, and resets only the camp progress.",
+    what: "Answer the `SUMMIT.md` questions cold. When you come back, `/pack` opens cycle 2 on the same project: it archives the old map and retro, carries the research, decisions and design across, and resets only the camp progress.",
   },
 ];
