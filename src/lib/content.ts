@@ -132,7 +132,7 @@ export const CHECKS: { when: string; what: string }[] = [
  * every kit release. A site describing a version nobody can download is worse
  * than no version at all.
  */
-export const KIT_VERSION = "1.3.2";
+export const KIT_VERSION = "1.3.3";
 
 /**
  * Thirteen verbs exist; two have to be remembered. The list below also has
