@@ -130,7 +130,8 @@ export default function Overview() {
         <p>Paste this into Terminal. It asks what to call the project and where to put it.</p>
         <pre className="term" tabIndex={0}>{`curl -fsSL https://raw.githubusercontent.com/ko-di/forest-kit/main/install.sh | bash`}</pre>
         <p>
-          Then open the folder and type <code>/pack</code>. You need{" "}
+          It then offers to start Claude Code in the new folder: say yes and type{" "}
+          <code>/pack</code>. You need{" "}
           <a href="https://claude.com/claude-code">Claude Code</a>, or Cursor
           with the Claude Code extension. No GitHub account, no git, nothing to
           sign in to.
