@@ -41,36 +41,32 @@ export default function Setup() {
 
       <section>
         <p className="label">Install</p>
-        <h2>One command. It asks where to put it.</h2>
-        <pre className="term" tabIndex={0}>{`bash <(curl -fsSL https://raw.githubusercontent.com/ko-di/forest-kit/main/install.sh)`}</pre>
+        <h2>Two lines, inside Claude Code.</h2>
+        <pre className="term" tabIndex={0}>{`/plugin marketplace add ko-di/forest-kit
+/plugin install forest@forest-kit`}</pre>
         <p>
-          It asks what to call the project and where it should live, then
-          downloads the kit, unpacks it there and runs setup. Press enter at
-          either question to take the default.
+          Type them in any folder. Claude Code keeps the plugin installed, so
+          the verbs are there in every session from then on, wherever you are.
         </p>
-        <pre className="term" tabIndex={0}>{`  forest-kit
-  ------------------------------------------------
+        <p className="meta">
+          Nothing is downloaded to a folder of its own, and there is no setup
+          step. To check it took, type <code>/</code> and start typing{" "}
+          <code>forest</code>: Claude Code lists what it has.
+        </p>
+      </section>
 
-  Project name [my-idea]:
-  Where should it live [~/Documents]:`}</pre>
+      <section>
+        <p className="label">Starting a project</p>
+        <h2>Open a folder and type one verb.</h2>
         <p>
-          At the end it offers to start Claude Code in the new folder. Say
-          yes, and type <code>/pack</code> when it opens.
+          Make a folder for the project, open it in Claude Code, and type{" "}
+          <code>/forest:pack</code>. It writes the project&rsquo;s files where
+          you are: the camp folders, <code>map.md</code> and{" "}
+          <code>compass.json</code>. The folder you open is the project.
         </p>
         <p className="meta">
-          <code>/pack</code> lives in the project folder, so it only works in
-          Claude Code started there. The Claude app, or Claude Code opened in
-          another folder, won&rsquo;t have it. To come back later,{" "}
-          <code>cd</code> into the folder, run <code>claude</code>, then{" "}
-          <code>/trail</code>.
-        </p>
-        <p className="meta">
-          Two other ways in, if you prefer. From a repo of your own:{" "}
-          <code>gh repo create my-idea --template ko-di/forest-kit --clone</code>.
-          Or{" "}
-          <a href="https://github.com/ko-di/forest-kit/releases/latest">download the latest release</a>{" "}
-          and run <code>./scripts/setup.sh</code> inside it. Both put the
-          project wherever Terminal currently is, and neither asks.
+          Coming back later is the same: open the folder, type{" "}
+          <code>/forest:trail</code>.
         </p>
       </section>
 
@@ -78,40 +74,24 @@ export default function Setup() {
         <p className="label">When you need GitHub</p>
         <h2>Not until the last camp.</h2>
         <p>
-          <code>/ship</code> is the first thing that commits and pushes, and it
-          offers to set git up for you when you get there. Everything before it
-          is files in a folder on your machine.
-        </p>
-        <p className="meta">
-          The <code>gh repo create</code> route above needs the GitHub CLI
-          installed and signed in.
+          <code>/forest:ship</code> is the first thing that commits and pushes,
+          and it offers to set git up for you when you get there. Everything
+          before it is files in a folder on your machine.
         </p>
       </section>
 
       <section>
         <p className="label">Updates</p>
-        <h2>A new version every couple of weeks. You choose when.</h2>
+        <h2>A new version every couple of weeks. Claude Code brings it.</h2>
         <p>
-          The kit keeps improving: sharper questions, better skills. When a
-          new version is out, Claude says so in one line at the start of a
-          session, and again when you close a camp. Never in the middle of
-          something.
-        </p>
-        <p>
-          Type <code>/resupply</code> to see what changed and which files it
-          would replace. Nothing changes until you say yes. It only swaps the
-          kit&rsquo;s own files. Your map, research, decisions and brief stay
-          exactly as they are, and so does your place on the trail. Start a
-          fresh session afterwards so Claude reads the new version.
+          Plugins update through Claude Code, so there is nothing to run and
+          nothing to download. To take one the moment it lands, type{" "}
+          <code>/plugin update forest</code>.
         </p>
         <p className="meta">
-          If you had edited one of the kit&rsquo;s files, yours stays and the
-          new version lands beside it to compare. Changed your mind?{" "}
-          <code>./scripts/resupply.sh --rollback</code> puts the old version
-          back. Projects made before 1.3.0 need one command first, run from
-          the project folder:
+          Your projects are plain files and an update never touches them. You
+          stay at the camp you were at.
         </p>
-        <pre className="term" tabIndex={0}>{`curl -fsSL https://raw.githubusercontent.com/ko-di/forest-kit/main/scripts/resupply.sh | bash`}</pre>
       </section>
 
       <section>
@@ -119,28 +99,16 @@ export default function Setup() {
         <table className="uses">
           <tbody>
             <tr>
-              <td><code>permission denied</code></td>
-              <td>macOS or Linux. Run <code>chmod +x scripts/setup.sh</code> once, then try again.</td>
+              <td><code>/forest:pack</code> isn&rsquo;t offered</td>
+              <td>The plugin isn&rsquo;t installed in this session. Run the two install lines above, then try again.</td>
             </tr>
             <tr>
-              <td><code>running scripts is disabled</code></td>
-              <td>Windows blocking local scripts. Run <code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code>, then try again.</td>
+              <td>You can&rsquo;t remember the verb</td>
+              <td>Type <code>/</code> and start typing <code>forest</code>. Claude Code lists what it has.</td>
             </tr>
             <tr>
-              <td><code>bad interpreter: ...bash^M</code></td>
-              <td>A Windows line-ending problem from an older copy. Download the latest release again, or run <code>setup.ps1</code> instead.</td>
-            </tr>
-            <tr>
-              <td><code>no such file or directory</code></td>
-              <td>Terminal is not in your project folder. Run <code>pwd</code> to see where it is, then <code>cd</code> to the right place. Dragging the folder in after typing <code>cd</code> is the reliable way.</td>
-            </tr>
-            <tr>
-              <td>It installed somewhere unexpected</td>
-              <td>The installer puts it where you answered. The other two routes use the folder Terminal is currently in, so run <code>pwd</code> first to see where that is.</td>
-            </tr>
-            <tr>
-              <td><code>/pack</code> isn&rsquo;t recognised</td>
-              <td>Claude Code was started outside the project folder, or it&rsquo;s the Claude app. In Terminal, <code>cd</code> into the project folder, run <code>claude</code>, then <code>/pack</code>.</td>
+              <td>Claude asks permission to create files</td>
+              <td>Normal on the first run in a new folder. <code>/forest:pack</code> writes the map, the compass and the camp folders there.</td>
             </tr>
             <tr>
               <td>Claude Code not on your PATH</td>
@@ -148,11 +116,11 @@ export default function Setup() {
             </tr>
             <tr>
               <td><code>No git repository here yet</code></td>
-              <td>Not an error. Nothing before <code>/ship</code> uses git.</td>
+              <td>Not an error. Nothing before <code>/forest:ship</code> uses git.</td>
             </tr>
             <tr>
-              <td><code>gh auth login</code> message</td>
-              <td>Only from the <code>gh</code> route. Either sign in, or use the installer instead.</td>
+              <td>You have a project from 1.x</td>
+              <td>It keeps working as it is, with its own copy of the skills. To move it over: install the plugin, delete <code>.claude/skills/</code> from the project, then <code>/forest:trail</code>.</td>
             </tr>
           </tbody>
         </table>
@@ -166,13 +134,13 @@ export default function Setup() {
           Nothing runs until you type a command.
         </p>
         <p>
-          <code>/pack</code> asks your role and how much detail you want with
+          <code>/forest:pack</code> asks your role and how much detail you want with
           each question, then starts intake. Expect twenty to forty minutes, and
           a closing summary of which answers are still thin.
         </p>
         <p>
-          Fifteen skills ship with the kit. You have to remember two:{" "}
-          <code>/pack</code>, then <code>/trail</code>. The rest are run for you
+          Fourteen skills ship with the plugin. You have to remember two:{" "}
+          <code>/forest:pack</code>, then <code>/forest:trail</code>. The rest are run for you
           at the point they apply, or offered once the deploy is live.
         </p>
         {COMMANDS.map((g) => (
@@ -214,9 +182,9 @@ export default function Setup() {
 ├─ research/raw/         notes, one file per session
 ├─ design/decisions/     why each call was made
 ├─ memory/session.md     local to your machine, not committed
-├─ SUMMIT.md             what went live, once /summit runs
+├─ SUMMIT.md             what went live, once /forest:summit runs
 ├─ retro.md              what to keep for next time
-└─ .claude/skills/       the fifteen skills that drive it`}</pre>
+└─ .forest/role.md       who you are, and how much explanation you want`}</pre>
         <p>
           Plain files throughout, readable at any point. Two do most of the
           work once the thinking is done. <code>BRIEF.md</code> goes to a build
