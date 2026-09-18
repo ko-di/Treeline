@@ -19,8 +19,8 @@ export default function Setup() {
       <header>
         <h1>Setup</h1>
         <p className="lede">
-          Two lines to install, one command to start. State lives in the folder,
-          so you can stop and pick up days later.
+          Download a folder, open it in Claude, type one command. State lives
+          in the folder, so you can stop and pick up days later.
         </p>
       </header>
 
@@ -28,60 +28,41 @@ export default function Setup() {
         <p className="label">What you need</p>
         <ul className="dashed">
           <li>
-            <a href="https://claude.com/claude-code">Claude Code</a>, or Cursor
-            with the Claude Code extension
+            The <a href="https://claude.com/download">Claude app</a>, with
+            Claude Code in it
           </li>
           <li>Node 20+, only if the thing you build ends up needing it</li>
         </ul>
         <p className="meta">
-          That is the whole list. No GitHub account, no git, nothing to sign
-          in to.
+          That is the whole list. No Terminal, no GitHub account, nothing to
+          install.
         </p>
       </section>
 
       <section>
-        <p className="label">Install</p>
-        <h2>Two steps, whichever way you work.</h2>
+        <p className="label">Start a project</p>
+        <h2>Download a folder, open it in Claude, type one command.</h2>
+        <ol className="plain">
+          <li><a href="https://github.com/ko-di/forest-kit/releases/latest/download/forest.zip">Download forest</a>. You get <code>forest.zip</code>.</li>
+          <li>Unzip it, and rename the folder to your project&rsquo;s name. Put it wherever you keep your work.</li>
+          <li>Open the Claude app, go to Claude Code, and choose that folder.</li>
+          <li>Type <code>/pack</code>.</li>
+        </ol>
         <p>
-          The first points Claude Code at the directory this plugin is listed
-          in. The second installs it.
-        </p>
-        <p className="label">In Terminal</p>
-        <pre className="term" tabIndex={0}>{`claude plugin marketplace add ko-di/forest-kit
-claude plugin install forest@forest-kit`}</pre>
-        <p className="label">Or inside Claude Code</p>
-        <pre className="term" tabIndex={0}>{`/plugin marketplace add ko-di/forest-kit
-/plugin install forest@forest-kit`}</pre>
-        <p>
-          Either way, restart Claude Code afterwards. The commands are then
-          there in every session, wherever you are.
+          <code>/pack</code> asks a few questions and sets the project up in
+          that folder. From then on, open the same folder and type{" "}
+          <code>/trail</code> to carry on.
         </p>
         <p className="meta">
-          Nothing is downloaded to a folder of its own, and there is no setup
-          step. To check it took, type <code>/</code> and start typing{" "}
-          <code>forest</code>: Claude Code lists what it has.
-        </p>
-      </section>
-
-      <section>
-        <p className="label">Starting a project</p>
-        <h2>Type one command. It makes the folder.</h2>
-        <p>
-          Type <code>/forest:pack</code>. It asks what to call the project and
-          where to keep it, makes the folder, and sets it up: the camp
-          folders, <code>map.md</code> and <code>compass.json</code>. Then it
-          tells you the path.
-        </p>
-        <p>
-          If you already opened a folder meant for this project, it uses that
-          one instead and says so. Either way, you never have to make a folder
-          first.
+          The folder looks almost empty at first. The kit is in a hidden
+          folder, <code>.claude/</code>, and your project&rsquo;s files appear
+          beside the README as you work. You never need to open{" "}
+          <code>.claude/</code>.
         </p>
         <p className="meta">
-          Coming back later: open that folder and type{" "}
-          <code>/forest:trail</code>. In Terminal that is{" "}
-          <code>cd [path]</code> then <code>claude</code>. In the Claude Code
-          app, open the folder the way you would in any app.
+          Prefer Terminal? Unzip and rename as above, then{" "}
+          <code>cd</code> into the folder, run <code>claude</code>, and type{" "}
+          <code>/pack</code>.
         </p>
       </section>
 
@@ -89,7 +70,7 @@ claude plugin install forest@forest-kit`}</pre>
         <p className="label">When you need GitHub</p>
         <h2>Not until the last camp.</h2>
         <p>
-          <code>/forest:ship</code> is the first thing that commits and pushes,
+          <code>/ship</code> is the first thing that commits and pushes,
           and it offers to set git up for you when you get there. Everything
           before it is files in a folder on your machine.
         </p>
@@ -97,15 +78,14 @@ claude plugin install forest@forest-kit`}</pre>
 
       <section>
         <p className="label">Updates</p>
-        <h2>A new version every couple of weeks. Claude Code brings it.</h2>
+        <h2>One download per project.</h2>
         <p>
-          Plugins update through Claude Code, so there is nothing to run and
-          nothing to download. To take one the moment it lands, type{" "}
-          <code>/plugin update forest</code>.
+          A new version comes out every couple of weeks. The download link
+          always gives you the newest, so your next project starts on it.
         </p>
         <p className="meta">
-          Your projects are plain files and an update never touches them. You
-          stay at the camp you were at.
+          A project you have already started keeps the version it began with,
+          and keeps working. Nothing changes in it unless you change it.
         </p>
       </section>
 
@@ -114,52 +94,45 @@ claude plugin install forest@forest-kit`}</pre>
         <table className="uses">
           <tbody>
             <tr>
-              <td><code>its network source differs</code></td>
-              <td>The directory is already added under that name, from an earlier attempt. Nothing is wrong: skip the add and run <code>/plugin install forest@forest-kit</code>. To start clean, <code>/plugin marketplace remove forest-kit</code> first.</td>
-            </tr>
-            <tr>
-              <td><code>/forest:pack</code> isn&rsquo;t offered</td>
-              <td>The plugin isn&rsquo;t installed in this session. Run the two install lines above, then try again.</td>
-            </tr>
-            <tr>
-              <td>You can&rsquo;t remember the command</td>
-              <td>Type <code>/</code> and start typing <code>forest</code>. Claude Code lists what it has.</td>
+              <td><code>/pack</code> isn&rsquo;t offered</td>
+              <td>Claude Code is open in a different folder. Choose the project folder itself: the one with the README in it.</td>
             </tr>
             <tr>
               <td>Claude asks permission to create files</td>
-              <td>Normal on the first run in a new folder. <code>/forest:pack</code> writes the map, the compass and the camp folders there.</td>
+              <td>Normal on the first run. <code>/pack</code> writes the map, the compass and the camp folders into your project.</td>
             </tr>
             <tr>
-              <td>Claude Code not on your PATH</td>
-              <td>Install it from <a href="https://claude.com/claude-code">claude.com/claude-code</a>, or open the folder in Cursor with the extension.</td>
+              <td>You can&rsquo;t remember the command</td>
+              <td>Type <code>/</code> and Claude Code lists what it has. The ones you need are <code>/pack</code> and <code>/trail</code>.</td>
+            </tr>
+            <tr>
+              <td>You can&rsquo;t see a <code>.claude</code> folder</td>
+              <td>It is hidden on purpose. You never need to open it.</td>
             </tr>
             <tr>
               <td><code>No git repository here yet</code></td>
-              <td>Not an error. Nothing before <code>/forest:ship</code> uses git.</td>
-            </tr>
-            <tr>
-              <td>You have a project from 1.x</td>
-              <td>It keeps working as it is, with its own copy of the skills. To move it over: install the plugin, delete <code>.claude/skills/</code> from the project, then <code>/forest:trail</code>.</td>
+              <td>Not an error. Nothing before <code>/ship</code> uses git.</td>
             </tr>
           </tbody>
         </table>
       </section>
 
       <section>
-        <p className="label">What to expect after setup</p>
+        <p className="label">What to expect</p>
         <h2>The first session.</h2>
         <p>
-          Setup creates the folders, a blank <code>map.md</code> and an empty <code>compass.json</code>.
-          Nothing runs until you type a command.
+          Nothing runs until you type a command. <code>/pack</code> creates
+          the folders, <code>map.md</code> and <code>compass.json</code> as it
+          goes.
         </p>
         <p>
-          <code>/forest:pack</code> asks your role and how much detail you want with
+          <code>/pack</code> asks your role and how much detail you want with
           each question, then starts intake. Expect twenty to forty minutes, and
           a closing summary of which answers are still thin.
         </p>
         <p>
-          Fourteen skills ship with the plugin. You have to remember two:{" "}
-          <code>/forest:pack</code>, then <code>/forest:trail</code>. The rest are run for you
+          Fourteen skills come in the download. You have to remember two:{" "}
+          <code>/pack</code>, then <code>/trail</code>. The rest are run for you
           at the point they apply, or offered once the deploy is live.
         </p>
         {COMMANDS.map((g) => (
@@ -201,7 +174,7 @@ claude plugin install forest@forest-kit`}</pre>
 ├─ research/raw/         notes, one file per session
 ├─ design/decisions/     why each call was made
 ├─ memory/session.md     local to your machine, not committed
-├─ SUMMIT.md             what went live, once /forest:summit runs
+├─ SUMMIT.md             what went live, once /summit runs
 ├─ retro.md              what to keep for next time
 └─ .forest/role.md       who you are, and how much explanation you want`}</pre>
         <p>

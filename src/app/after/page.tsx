@@ -87,12 +87,12 @@ export default function After() {
             </tr>
             <tr>
               <td><strong>A developer or an agency</strong></td>
-              <td>Send the brief, the design and the PRD. For a client handover, <code>/forest:handoff</code> packages it and verifies the access transfers.</td>
+              <td>Send the brief, the design and the PRD. For a client handover, <code>/handoff</code> packages it and verifies the access transfers.</td>
             </tr>
           </tbody>
         </table>
         <p>
-          When a phase comes back, <code>/forest:camp build</code> compares it with the
+          When a phase comes back, <code>/camp build</code> compares it with the
           design and lists every divergence, so drift gets named while it is one
           component rather than twenty.
         </p>
