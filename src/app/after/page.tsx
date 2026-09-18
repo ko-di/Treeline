@@ -5,7 +5,7 @@ import { AFTER } from "@/lib/content";
 export const metadata = {
   title: "After the documents · forest-kit",
   description:
-    "What happens once the early camps are filled in: building from the map, shipping, verifying, and closing out.",
+    "What happens once the early camps are filled in: building from the brief, shipping, verifying, and closing out.",
 };
 
 export default function After() {

@@ -1,7 +1,5 @@
 /* ─────────────────────────────────────────────────
-   Reset. Replaces Tailwind's preflight, which the site
-   pulled in wholesale to use a single utility class.
-   Only the parts this site actually relies on.
+   Reset. Only the parts this site actually relies on.
    ───────────────────────────────────────────────── */
 
 *,
@@ -56,9 +54,7 @@ table { border-collapse: collapse; }
   --underline: rgba(255, 255, 255, 0.16);
   --accent: #9aa8d8;
   --accent-underline: rgba(154, 168, 216, 0.5);
-  --accent-outline: rgba(154, 168, 216, 0.6);
   --selection: rgba(125, 145, 215, 0.28);
-  --glow: rgba(120, 140, 210, 0.075);
 
   color-scheme: dark;
 }
@@ -75,14 +71,12 @@ table { border-collapse: collapse; }
     --text-em: #1f1f22;
     --text-dim: #52525b;
     --marker: #71717a;
-  --banner: #55555e;
+    --banner: #55555e;
     --hairline: rgba(0, 0, 0, 0.09);
     --underline: rgba(0, 0, 0, 0.18);
     --accent: #5261a8;
     --accent-underline: rgba(82, 97, 168, 0.5);
-    --accent-outline: rgba(82, 97, 168, 0.6);
     --selection: rgba(110, 130, 200, 0.22);
-    --glow: transparent;
 
     color-scheme: light;
   }
@@ -102,17 +96,10 @@ table { border-collapse: collapse; }
   --underline: rgba(0, 0, 0, 0.18);
   --accent: #5261a8;
   --accent-underline: rgba(82, 97, 168, 0.5);
-  --accent-outline: rgba(82, 97, 168, 0.6);
   --selection: rgba(110, 130, 200, 0.22);
-  --glow: transparent;
 
   color-scheme: light;
 }
-
-
-*,
-*::before,
-*::after { box-sizing: border-box; }
 
 body {
   margin: 0 auto;
@@ -201,7 +188,6 @@ section { margin-top: 4rem; }
 .dim { color: var(--text-dim); }
 
 /* dash markers, not discs */
-ul { list-style: none; padding: 0; margin: 0; }
 ul.dashed li {
   position: relative;
   padding-left: 1.1rem;
@@ -215,13 +201,12 @@ ul.dashed li::before {
 }
 ul.dashed li:last-child { margin-bottom: 0; }
 
-/* a numbered run, for the stages */
-ol.steps { list-style: none; padding: 0; margin: 0; }
+/* a numbered run, for /after */
 ol.steps li {
   display: grid;
   grid-template-columns: 1.9rem minmax(0, 1fr);
   gap: 0.75rem;
-  padding: 0.7rem 0;
+  padding: 1.4rem 0;
   border-top: 1px solid var(--hairline);
 }
 ol.steps li:last-child { border-bottom: 1px solid var(--hairline); }
@@ -231,6 +216,9 @@ ol.steps .n {
   color: var(--text-dim);
   padding-top: 1px;
 }
+ol.steps h3 { margin-bottom: 0.45rem; }
+ol.steps p { margin-bottom: 0.5rem; }
+ol.steps p:last-child { margin-bottom: 0; }
 
 pre.term:focus-visible {
   outline: 1px solid var(--accent);
@@ -246,26 +234,18 @@ pre.term {
   line-height: 1.6;
   overflow-x: auto;
   color: var(--text-em);
-  margin: 0;
+  margin: 1.25rem 0;
 }
 
 footer {
-  margin-top: 4rem;
-  padding-top: 1.25rem;
+  margin-top: 4.5rem;
+  padding-top: 1.5rem;
   border-top: 1px solid var(--hairline);
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.875rem;
 }
-
-
-/* ── stage rows ─────────────────────────────────── */
-
-ol.steps li { padding: 1.15rem 0; }
-ol.steps h3 { margin-bottom: 0.3rem; }
-ol.steps p { margin-bottom: 0.5rem; }
-ol.steps p:last-child { margin-bottom: 0; }
 
 .meta {
   font-size: 0.875rem;
@@ -275,7 +255,7 @@ ol.steps p:last-child { margin-bottom: 0; }
 /* ── flow diagram ───────────────────────────────── */
 
 .flow {
-  margin: 0 0 1.5rem;
+  margin: 1.25rem 0 1.75rem;
   padding: 0.5rem 0 0;
 }
 
@@ -318,13 +298,16 @@ ol.steps p:last-child { margin-bottom: 0; }
   letter-spacing: 0.02em;
 }
 
+/* The row on wide screens, the column on phones. */
+.flow svg.flow-column { display: none; }
+
 @media (max-width: 520px) {
+  .flow svg.flow-row { display: none; }
+  .flow svg.flow-column { display: block; max-width: 300px; margin: 0 auto; }
   .flow text { font-size: 13px; }
-  .flow .loop-label { font-size: 12px; }
+  .flow .loop-label { font-size: 11px; }
 }
 
-ol.steps ul.dashed { margin: 0.5rem 0 0.6rem; }
-ol.steps ul.dashed li { margin-bottom: 0.4rem; font-size: 0.9375rem; }
 .out { margin-top: 0.75rem; }
 .out code { font-size: 0.8125rem; }
 ul.dashed.spaced li { margin-bottom: 0.9rem; }
@@ -403,8 +386,7 @@ ul.dashed.spaced li { margin-bottom: 0.9rem; }
 
 table {
   width: 100%;
-  border-collapse: collapse;
-  margin: 0 0 1rem;
+  margin: 0 0 1.25rem;
   font-size: 0.9375rem;
 }
 
@@ -415,12 +397,12 @@ th {
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0 0.75rem 0.5rem 0;
+  padding: 0 0.75rem 0.65rem 0;
   border-bottom: 1px solid var(--hairline);
 }
 
 td {
-  padding: 0.7rem 0.75rem 0.7rem 0;
+  padding: 0.85rem 0.9rem 0.85rem 0;
   border-bottom: 1px solid var(--hairline);
   vertical-align: top;
 }
@@ -479,11 +461,7 @@ table.cmds td { padding-top: 0.45rem; padding-bottom: 0.45rem; }
 
 .theme-toggle {
   margin-left: 0.9rem;
-  padding: 0;
-  border: 0;
-  background: none;
   color: var(--text-dim);
-  cursor: pointer;
   line-height: 0;
 }
 .theme-toggle:hover { color: var(--accent); }
@@ -496,36 +474,20 @@ table.cmds td { padding-top: 0.45rem; padding-bottom: 0.45rem; }
   stroke-linecap: round;
 }
 
-/* ── spacing pass ───────────────────────────────── */
+/* ── spacing ────────────────────────────────────── */
 
 header { margin-bottom: 0.5rem; }
 header .lede { margin-bottom: 1.1rem; }
 
-/* stage rows: room between the description and its output line */
-ol.steps li { padding: 1.4rem 0; }
-ol.steps h3 { margin-bottom: 0.45rem; }
-ol.steps ul.dashed { margin: 0.6rem 0 0; }
-ol.steps .out { margin-top: 0.85rem; }
-
-/* tables breathe a little more */
-td { padding: 0.85rem 0.9rem 0.85rem 0; }
-th { padding-bottom: 0.65rem; }
-table { margin-bottom: 1.25rem; }
 table.uses td:first-child { width: 14rem; color: var(--text-em); }
 
 /* code blocks sit clear of the prose either side */
-pre.term { margin: 1.25rem 0; }
 p + pre.term { margin-top: 0.9rem; }
 pre.term + p { margin-top: 1.25rem; }
 
 /* lists clear of what follows */
 ul.dashed { margin-bottom: 1rem; }
 ul.dashed + p { margin-top: 1rem; }
-
-/* diagram */
-.flow { margin: 1.25rem 0 1.75rem; }
-
-footer { margin-top: 4.5rem; padding-top: 1.5rem; }
 
 @media (max-width: 520px) {
   body { padding: 2.5rem 1.25rem 4rem; }

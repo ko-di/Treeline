@@ -6,7 +6,7 @@
  * into <code>. Plain interpolation would print the backticks.
  */
 
-export type Camp = {
+type Camp = {
   n: string;
   slug: string;
   name: string;
@@ -29,7 +29,7 @@ export const CAMPS: Camp[] = [
       "If you do not have a concrete idea, runs an idea hunt instead of pressing on with a blank one",
       "Drafts the project map, which every later camp reads and updates",
     ],
-    output: "camps/1-intake/idea.md, compass.json",
+    output: "compass.json, map.md",
   },
   {
     n: "02",
@@ -127,14 +127,16 @@ export const CHECKS: { when: string; what: string }[] = [
 
 /**
  * The kit release this site describes. Must match forest-kit's `.kit-version`.
- * Nothing syncs these automatically, so scripts/check-kit-version.mjs compares
- * them and fails if they drift. A site describing a version nobody can download is worse
- * than a site with no version on it at all.
+ * Nothing syncs these automatically. scripts/check-kit-version.mjs compares
+ * them before every build and fails it if they differ, so bump this after
+ * every kit release. A site describing a version nobody can download is worse
+ * than no version at all.
  */
-export const KIT_VERSION = "1.3.1";
+export const KIT_VERSION = "1.3.2";
 
 /**
- * Thirteen verbs exist; two have to be remembered. The kit runs most of them
+ * Thirteen verbs exist; two have to be remembered. The list below also has
+ * the /weather gate and /resupply, which are not verbs. The kit runs most of them
  * for you at the point they apply, so listing them flat made the workflow read
  * heavier than it is. Grouped by who invokes them, not alphabetically.
  */

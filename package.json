@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "prebuild": "node scripts/check-kit-version.mjs",
+    "lint": "eslint",
+    "check": "node scripts/check-kit-version.mjs"
   },
   "dependencies": {
     "next": "16.2.4",
