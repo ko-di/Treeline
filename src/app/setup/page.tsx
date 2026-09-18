@@ -19,7 +19,7 @@ export default function Setup() {
       <header>
         <h1>Setup</h1>
         <p className="lede">
-          Two commands to install, one to start. State lives in the folder, so
+          One command to install, one to start. State lives in the folder, so
           you can stop and pick up days later.
         </p>
       </header>
@@ -69,16 +69,15 @@ export default function Setup() {
 
       <section>
         <p className="label">When you need GitHub</p>
-        <h2>Not until the last stage.</h2>
+        <h2>Not until the last camp.</h2>
         <p>
           <code>/ship</code> is the first thing that commits and pushes, and it
           offers to set git up for you when you get there. Everything before it
           is files in a folder on your machine.
         </p>
         <p className="meta">
-          If you already use GitHub and would rather start from a repo of your
-          own, <code>gh repo create my-idea --template ko-di/forest-kit --clone</code>{" "}
-          does that. It needs the GitHub CLI installed and signed in.
+          The <code>gh repo create</code> route above needs the GitHub CLI
+          installed and signed in.
         </p>
       </section>
 
@@ -122,7 +121,7 @@ export default function Setup() {
             </tr>
             <tr>
               <td><code>bad interpreter: ...bash^M</code></td>
-              <td>A Windows line-ending problem from an older copy. Re-download the ZIP, or run <code>setup.ps1</code> instead.</td>
+              <td>A Windows line-ending problem from an older copy. Download the latest release again, or run <code>setup.ps1</code> instead.</td>
             </tr>
             <tr>
               <td><code>no such file or directory</code></td>
@@ -130,15 +129,7 @@ export default function Setup() {
             </tr>
             <tr>
               <td>It installed somewhere unexpected</td>
-              <td>Every route uses the folder Terminal is currently in. Run <code>pwd</code> before installing to see where that is.</td>
-            </tr>
-            <tr>
-              <td><code>mkdir: my-idea: File exists</code>, then nothing</td>
-              <td>The chain stops at the first failure. Delete that folder, or change <code>my-idea</code> to a new name in the command.</td>
-            </tr>
-            <tr>
-              <td>Nothing seems to happen</td>
-              <td>On the manual route, you probably typed <code>path/to/your-folder</code> literally. That is a placeholder, not a path.</td>
+              <td>The installer puts it where you answered. The other two routes use the folder Terminal is currently in, so run <code>pwd</code> first to see where that is.</td>
             </tr>
             <tr>
               <td>Claude Code not on your PATH</td>
@@ -150,7 +141,7 @@ export default function Setup() {
             </tr>
             <tr>
               <td><code>gh auth login</code> message</td>
-              <td>Only from the <code>gh</code> route. Either sign in, or use the ZIP instead.</td>
+              <td>Only from the <code>gh</code> route. Either sign in, or use the installer instead.</td>
             </tr>
           </tbody>
         </table>

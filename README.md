@@ -13,17 +13,22 @@ Everything here describes [forest-kit](https://github.com/ko-di/forest-kit). The
 | Page | Covers |
 |---|---|
 | `/` | What it is, the camps at a glance, how it fits together, install |
-| `/stages` | Each camp in full, and where it asks for more |
+| `/camps` | Each camp in full, and where it asks for more |
 | `/after` | What happens once the early camps are filled in, and who it suits |
 | `/setup` | Requirements, install, the first session, project structure |
 
 | File | Holds |
 |---|---|
 | `src/lib/content.ts` | Camps, checkpoints, commands, use cases — anything used on more than one page |
-| `src/components/Banner.tsx` | The pixel banner. Generated — edit the scene in `scripts/banner.mjs` and re-run it, do not hand-edit the path |
-| `src/components/Flow.tsx` | The six-camp diagram |
+| `src/components/Banner.tsx` | The pixel banner. Generated — edit the scene in `scripts/banner.mjs`, run it and paste the output in; do not hand-edit the path |
+| `src/components/Flow.tsx` | The six-camp diagram: a row on wide screens, a column on phones |
 | `src/components/ThemeToggle.tsx` | Light/dark toggle. Stateless by design — CSS picks the icon, so there is nothing to hydrate |
-| `src/components/Nav.tsx` | Page links |
+| `src/components/Nav.tsx`, `NavMenu.tsx` | Page links, and the menu they collapse into on a phone |
+| `src/components/sections.tsx` | Pieces shared by every page: the footer, the next-page link, and `<Ticks>`, which renders `backticks` in the copy as code |
+| `scripts/check-kit-version.mjs` | Runs before every build, and as `npm run check`. Fails if the version the site states differs from the kit's `.kit-version`: the copy beside this repo when there is one, otherwise the one on GitHub |
+| `src/app/opengraph-image.tsx` | The preview image for shared links, drawn from the banner path at build time |
+| `src/app/sitemap.ts`, `robots.ts` | For search engines. Add new routes to the sitemap |
+| `.github/workflows/checks.yml` | Lint, types and a full build on every push |
 | `src/app/globals.css` | Reset, tokens, type, tables, and the diagram styles |
 | `public/theme-init.js` | Applies a stored theme before first paint. Must stay a real file loaded with `<script src>` — React will not execute an inline script rendered from a component |
 
@@ -35,9 +40,9 @@ Both illustrations are inline SVG using `currentColor`, so they follow the theme
 
 Built on the [Next.js portfolio](https://vercel.com/templates/next.js/nextjs-portfolio-pageview-counter) template by [chronark](https://github.com/chronark), whose terms ask that their personal content be removed before deploying. It is, entirely — only the design language carries over.
 
-620px measure, 14px body, small headings. Body text is grey and headings near-white, so emphasis comes from weight and contrast rather than size. System font stack, no webfont. Dash markers instead of discs. Hairline rules as the only depth method.
+700px measure, 16px body, small headings. Body text is grey and headings near-white, so emphasis comes from weight and contrast rather than size. System font stack, no webfont. Dash markers instead of discs. Hairline rules as the only depth method.
 
-The one departure: the accent stays our warm ochre rather than the template's periwinkle. Dark leads; light follows the system.
+The accent is a muted periwinkle. Dark leads; light follows the system, and a toggle overrides it.
 
 ## Stack
 

@@ -127,12 +127,8 @@ export default function Overview() {
 
       <section>
         <p className="label">Install</p>
-        <p>
-          <a href="https://github.com/ko-di/forest-kit/archive/refs/heads/main.zip">Download the ZIP</a>,
-          unzip it, rename the folder to your project, then:
-        </p>
-        <pre className="term" tabIndex={0}>{`cd path/to/your-folder
-./scripts/setup.sh`}</pre>
+        <p>Paste this into Terminal. It asks what to call the project and where to put it.</p>
+        <pre className="term" tabIndex={0}>{`curl -fsSL https://raw.githubusercontent.com/ko-di/forest-kit/main/install.sh | bash`}</pre>
         <p>
           Then open the folder and type <code>/pack</code>. You need{" "}
           <a href="https://claude.com/claude-code">Claude Code</a>, or Cursor
