@@ -131,8 +131,9 @@ export default function Overview() {
         <pre className="term" tabIndex={0}>{`/plugin marketplace add ko-di/forest-kit
 /plugin install forest@forest-kit`}</pre>
         <p>
-          The verbs are then there in every session. Open a folder for your
-          project and type <code>/forest:pack</code>. You need{" "}
+          The verbs are then there in every session. Type{" "}
+          <code>/forest:pack</code> and it asks what to call the project and
+          where to keep it, then makes the folder for you. You need{" "}
           <a href="https://claude.com/claude-code">Claude Code</a>, or Cursor
           with the Claude Code extension. No download, no GitHub account, no
           git.
