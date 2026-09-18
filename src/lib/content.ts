@@ -132,11 +132,11 @@ export const CHECKS: { when: string; what: string }[] = [
  * every kit release. A site describing a version nobody can download is worse
  * than no version at all.
  */
-export const KIT_VERSION = "2.1.0";
+export const KIT_VERSION = "2.1.1";
 
 /**
- * Thirteen verbs exist; two have to be remembered. The list below also has
- * the /forest:weather gate, which is not a verb. The kit runs most of them
+ * Thirteen commands exist; two have to be remembered. The list below also has
+ * the /forest:weather gate, which is not a command. The kit runs most of them
  * for you at the point they apply, so listing them flat made the workflow read
  * heavier than it is. Grouped by who invokes them, not alphabetically.
  */
@@ -150,7 +150,7 @@ export const COMMANDS: {
     note: "Two of these are the whole workflow. The rest are there when you want them.",
     items: [
       { cmd: "/forest:pack", does: "Set up the project and run intake. The only way in" },
-      { cmd: "/forest:trail", does: "Move through the camps in order, running the right verb at each" },
+      { cmd: "/forest:trail", does: "Move through the camps in order, running the right command at each" },
       { cmd: "/forest:compass", does: "Suggest the next step from current state" },
       { cmd: "/forest:map", does: "Show what is filled in and what is not" },
       { cmd: "/forest:camp <name>", does: "Jump to one camp and work there, out of order" },
@@ -165,7 +165,7 @@ export const COMMANDS: {
       { cmd: "/forest:gather", does: "Offered once three notes are filed. Synthesis" },
       { cmd: "/forest:sketch", does: "Camp 4. Brand and visual direction from your references" },
       { cmd: "/forest:weather", does: "The gate. Fires when Camp 2 closes, and can say turn back" },
-      { cmd: "/forest:ship", does: "Camp 6. Checks, commit, push. The first of four verbs there" },
+      { cmd: "/forest:ship", does: "Camp 6. Checks, commit, push. The first of four commands there" },
     ],
   },
   {
