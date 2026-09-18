@@ -61,7 +61,7 @@ export default function Setup() {
           Two other ways in, if you prefer. From a repo of your own:{" "}
           <code>gh repo create my-idea --template ko-di/forest-kit --clone</code>.
           Or{" "}
-          <a href="https://github.com/ko-di/forest-kit/archive/refs/heads/main.zip">download the ZIP</a>{" "}
+          <a href="https://github.com/ko-di/forest-kit/releases/latest">download the latest release</a>{" "}
           and run <code>./scripts/setup.sh</code> inside it. Both put the
           project wherever Terminal currently is, and neither asks.
         </p>
@@ -80,6 +80,32 @@ export default function Setup() {
           own, <code>gh repo create my-idea --template ko-di/forest-kit --clone</code>{" "}
           does that. It needs the GitHub CLI installed and signed in.
         </p>
+      </section>
+
+      <section>
+        <p className="label">Updates</p>
+        <h2>A new version every couple of weeks. You choose when.</h2>
+        <p>
+          The kit keeps improving: sharper questions, better skills. When a
+          new version is out, Claude says so in one line at the start of a
+          session, and again when you close a camp. Never in the middle of
+          something.
+        </p>
+        <p>
+          Type <code>/resupply</code> to see what changed and which files it
+          would replace. Nothing changes until you say yes. It only swaps the
+          kit&rsquo;s own files. Your map, research, decisions and brief stay
+          exactly as they are, and so does your place on the trail. Start a
+          fresh session afterwards so Claude reads the new version.
+        </p>
+        <p className="meta">
+          If you had edited one of the kit&rsquo;s files, yours stays and the
+          new version lands beside it to compare. Changed your mind?{" "}
+          <code>./scripts/resupply.sh --rollback</code> puts the old version
+          back. Projects made before 1.3.0 need one command first, run from
+          the project folder:
+        </p>
+        <pre className="term" tabIndex={0}>{`curl -fsSL https://raw.githubusercontent.com/ko-di/forest-kit/main/scripts/resupply.sh | bash`}</pre>
       </section>
 
       <section>
@@ -143,7 +169,7 @@ export default function Setup() {
           a closing summary of which answers are still thin.
         </p>
         <p>
-          Fourteen skills ship with the kit. You have to remember two:{" "}
+          Fifteen skills ship with the kit. You have to remember two:{" "}
           <code>/pack</code>, then <code>/trail</code>. The rest are run for you
           at the point they apply, or offered once the deploy is live.
         </p>
@@ -188,7 +214,7 @@ export default function Setup() {
 ├─ memory/session.md     local to your machine, not committed
 ├─ SUMMIT.md             what went live, once /summit runs
 ├─ retro.md              what to keep for next time
-└─ .claude/skills/       the fourteen skills that drive it`}</pre>
+└─ .claude/skills/       the fifteen skills that drive it`}</pre>
         <p>
           Plain files throughout, readable at any point. Two do most of the
           work once the thinking is done. <code>BRIEF.md</code> goes to a build
