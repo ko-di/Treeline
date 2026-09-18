@@ -25,7 +25,7 @@ Everything here describes [forest-kit](https://github.com/ko-di/forest-kit). The
 | `src/components/ThemeToggle.tsx` | Light/dark toggle. Stateless by design — CSS picks the icon, so there is nothing to hydrate |
 | `src/components/Nav.tsx`, `NavMenu.tsx` | Page links, and the menu they collapse into on a phone |
 | `src/components/sections.tsx` | Pieces shared by every page: the footer, the next-page link, and `<Ticks>`, which renders `backticks` in the copy as code |
-| `scripts/check-kit-version.mjs` | Runs before every build, and as `npm run check`. Fails if the version the site states differs from the kit's `.kit-version`: the copy beside this repo when there is one, otherwise the one on GitHub |
+| `scripts/check-kit-version.mjs` | Runs before every build, and as `npm run check`. Fails if the version the site states differs from the plugin's `plugin.json`: the copy beside this repo when there is one, otherwise the one on GitHub |
 | `src/app/opengraph-image.tsx` | The preview image for shared links, drawn from the banner path at build time |
 | `src/app/sitemap.ts`, `robots.ts` | For search engines. Add new routes to the sitemap |
 | `.github/workflows/checks.yml` | Lint, types and a full build on every push |

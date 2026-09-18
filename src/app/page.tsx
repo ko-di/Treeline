@@ -85,18 +85,18 @@ export default function Overview() {
         </p>
         <p>
           <strong>One gate sits between them.</strong> When Discover closes,{" "}
-          <code>/weather</code> reads your notes and returns press on, reroute,
+          <code>/forest:weather</code> reads your notes and returns press on, reroute,
           or turn back, weighing each claim by whether you watched it, heard it,
           reasoned it, or assumed it. Every reading names at least two routes
           onward, and you can overrule any of them. The override is written down
-          and quoted back to you at <code>/ship</code>, against what you said you
+          and quoted back to you at <code>/forest:ship</code>, against what you said you
           would regret.
         </p>
         <p>
           <strong>Ship closes the loop.</strong> Before anything goes out you are
           asked what you expect to regret in three weeks.{" "}
           <code>SUMMIT.md</code> carries a reflection to answer three months on,
-          and <code>/retro</code> names what to take to the next project.
+          and <code>/forest:retro</code> names what to take to the next project.
         </p>
       </section>
 
@@ -127,14 +127,15 @@ export default function Overview() {
 
       <section>
         <p className="label">Install</p>
-        <p>Paste this into Terminal. It asks what to call the project and where to put it.</p>
-        <pre className="term" tabIndex={0}>{`bash <(curl -fsSL https://raw.githubusercontent.com/ko-di/forest-kit/main/install.sh)`}</pre>
+        <p>Two lines, typed inside Claude Code. Any folder will do.</p>
+        <pre className="term" tabIndex={0}>{`/plugin marketplace add ko-di/forest-kit
+/plugin install forest@forest-kit`}</pre>
         <p>
-          It then offers to start Claude Code in the new folder: say yes and type{" "}
-          <code>/pack</code>. You need{" "}
+          The verbs are then there in every session. Open a folder for your
+          project and type <code>/forest:pack</code>. You need{" "}
           <a href="https://claude.com/claude-code">Claude Code</a>, or Cursor
-          with the Claude Code extension. No GitHub account, no git, nothing to
-          sign in to.
+          with the Claude Code extension. No download, no GitHub account, no
+          git.
         </p>
         <Next href="/setup" label="Setup, first session and project structure" />
       </section>
