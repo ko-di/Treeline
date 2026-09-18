@@ -54,8 +54,15 @@ export default function Setup() {
   Project name [my-idea]:
   Where should it live [~/Documents]:`}</pre>
         <p>
-          Then <code>cd</code> to the folder it names and type{" "}
-          <code>/pack</code>.
+          At the end it offers to start Claude Code in the new folder. Say
+          yes, and type <code>/pack</code> when it opens.
+        </p>
+        <p className="meta">
+          <code>/pack</code> lives in the project folder, so it only works in
+          Claude Code started there. The Claude app, or Claude Code opened in
+          another folder, won&rsquo;t have it. To come back later,{" "}
+          <code>cd</code> into the folder, run <code>claude</code>, then{" "}
+          <code>/trail</code>.
         </p>
         <p className="meta">
           Two other ways in, if you prefer. From a repo of your own:{" "}
@@ -130,6 +137,10 @@ export default function Setup() {
             <tr>
               <td>It installed somewhere unexpected</td>
               <td>The installer puts it where you answered. The other two routes use the folder Terminal is currently in, so run <code>pwd</code> first to see where that is.</td>
+            </tr>
+            <tr>
+              <td><code>/pack</code> isn&rsquo;t recognised</td>
+              <td>Claude Code was started outside the project folder, or it&rsquo;s the Claude app. In Terminal, <code>cd</code> into the project folder, run <code>claude</code>, then <code>/pack</code>.</td>
             </tr>
             <tr>
               <td>Claude Code not on your PATH</td>
