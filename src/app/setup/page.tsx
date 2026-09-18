@@ -19,8 +19,8 @@ export default function Setup() {
       <header>
         <h1>Setup</h1>
         <p className="lede">
-          One command to install, one to start. State lives in the folder, so
-          you can stop and pick up days later.
+          Two lines to install, one verb to start. State lives in the folder,
+          so you can stop and pick up days later.
         </p>
       </header>
 
@@ -57,16 +57,23 @@ export default function Setup() {
 
       <section>
         <p className="label">Starting a project</p>
-        <h2>Open a folder and type one verb.</h2>
+        <h2>Type one verb. It makes the folder.</h2>
         <p>
-          Make a folder for the project, open it in Claude Code, and type{" "}
-          <code>/forest:pack</code>. It writes the project&rsquo;s files where
-          you are: the camp folders, <code>map.md</code> and{" "}
-          <code>compass.json</code>. The folder you open is the project.
+          Type <code>/forest:pack</code>. It asks what to call the project and
+          where to keep it, makes the folder, and sets it up: the camp
+          folders, <code>map.md</code> and <code>compass.json</code>. Then it
+          tells you the path.
+        </p>
+        <p>
+          If you already opened a folder meant for this project, it uses that
+          one instead and says so. Either way, you never have to make a folder
+          first.
         </p>
         <p className="meta">
-          Coming back later is the same: open the folder, type{" "}
-          <code>/forest:trail</code>.
+          Coming back later: open that folder and type{" "}
+          <code>/forest:trail</code>. In Terminal that is{" "}
+          <code>cd [path]</code> then <code>claude</code>. In the Claude Code
+          app, open the folder the way you would in any app.
         </p>
       </section>
 
