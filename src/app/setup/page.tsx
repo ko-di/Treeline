@@ -19,7 +19,7 @@ export default function Setup() {
       <header>
         <h1>Setup</h1>
         <p className="lede">
-          Two lines to install, one verb to start. State lives in the folder,
+          Two lines to install, one command to start. State lives in the folder,
           so you can stop and pick up days later.
         </p>
       </header>
@@ -41,12 +41,20 @@ export default function Setup() {
 
       <section>
         <p className="label">Install</p>
-        <h2>Two lines, inside Claude Code.</h2>
+        <h2>Two steps, whichever way you work.</h2>
+        <p>
+          The first points Claude Code at the directory this plugin is listed
+          in. The second installs it.
+        </p>
+        <p className="label">In Terminal</p>
+        <pre className="term" tabIndex={0}>{`claude plugin marketplace add ko-di/forest-kit
+claude plugin install forest@forest-kit`}</pre>
+        <p className="label">Or inside Claude Code</p>
         <pre className="term" tabIndex={0}>{`/plugin marketplace add ko-di/forest-kit
 /plugin install forest@forest-kit`}</pre>
         <p>
-          Type them in any folder. Claude Code keeps the plugin installed, so
-          the verbs are there in every session from then on, wherever you are.
+          Either way, restart Claude Code afterwards. The commands are then
+          there in every session, wherever you are.
         </p>
         <p className="meta">
           Nothing is downloaded to a folder of its own, and there is no setup
@@ -57,7 +65,7 @@ export default function Setup() {
 
       <section>
         <p className="label">Starting a project</p>
-        <h2>Type one verb. It makes the folder.</h2>
+        <h2>Type one command. It makes the folder.</h2>
         <p>
           Type <code>/forest:pack</code>. It asks what to call the project and
           where to keep it, makes the folder, and sets it up: the camp
@@ -110,7 +118,7 @@ export default function Setup() {
               <td>The plugin isn&rsquo;t installed in this session. Run the two install lines above, then try again.</td>
             </tr>
             <tr>
-              <td>You can&rsquo;t remember the verb</td>
+              <td>You can&rsquo;t remember the command</td>
               <td>Type <code>/</code> and start typing <code>forest</code>. Claude Code lists what it has.</td>
             </tr>
             <tr>

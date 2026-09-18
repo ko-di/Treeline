@@ -127,11 +127,11 @@ export default function Overview() {
 
       <section>
         <p className="label">Install</p>
-        <p>Two lines, typed inside Claude Code. Any folder will do.</p>
-        <pre className="term" tabIndex={0}>{`/plugin marketplace add ko-di/forest-kit
-/plugin install forest@forest-kit`}</pre>
+        <p>Two steps, in Terminal or inside Claude Code. Any folder will do.</p>
+        <pre className="term" tabIndex={0}>{`claude plugin marketplace add ko-di/forest-kit
+claude plugin install forest@forest-kit`}</pre>
         <p>
-          The verbs are then there in every session. Type{" "}
+          The commands are then there in every session. Type{" "}
           <code>/forest:pack</code> and it asks what to call the project and
           where to keep it, then makes the folder for you. You need{" "}
           <a href="https://claude.com/claude-code">Claude Code</a>, or Cursor
