@@ -45,7 +45,7 @@ export default function Setup() {
         <ol className="plain">
           <li><a href="https://github.com/ko-di/forest-kit/releases/latest/download/forest.zip">Download forest</a>. You get <code>forest.zip</code>.</li>
           <li>Unzip it, and rename the folder to your project&rsquo;s name. Put it wherever you keep your work.</li>
-          <li>Open the Claude app, go to Claude Code, and choose that folder.</li>
+          <li>Open the folder in Claude Code, in the Claude app.</li>
           <li>Type <code>/pack</code>.</li>
         </ol>
         <p>

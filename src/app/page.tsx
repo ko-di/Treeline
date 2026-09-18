@@ -130,7 +130,7 @@ export default function Overview() {
         <ol className="plain">
           <li><a href="https://github.com/ko-di/forest-kit/releases/latest/download/forest.zip">Download forest</a>.</li>
           <li>Unzip it and rename the folder after your idea.</li>
-          <li>Open that folder in the Claude app&rsquo;s Claude Code.</li>
+          <li>Open the folder in Claude Code, in the Claude app.</li>
           <li>Type <code>/pack</code>.</li>
         </ol>
         <p className="meta">
