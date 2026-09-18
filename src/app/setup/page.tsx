@@ -42,7 +42,7 @@ export default function Setup() {
       <section>
         <p className="label">Install</p>
         <h2>One command. It asks where to put it.</h2>
-        <pre className="term" tabIndex={0}>{`curl -fsSL https://raw.githubusercontent.com/ko-di/forest-kit/main/install.sh | bash`}</pre>
+        <pre className="term" tabIndex={0}>{`bash <(curl -fsSL https://raw.githubusercontent.com/ko-di/forest-kit/main/install.sh)`}</pre>
         <p>
           It asks what to call the project and where it should live, then
           downloads the kit, unpacks it there and runs setup. Press enter at
