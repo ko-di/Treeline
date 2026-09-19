@@ -13,9 +13,9 @@ export default function Overview() {
       <main>
 
       <header>
-        <h1 className="visually-hidden">forest-kit</h1>
+        <h1 className="visually-hidden">forest</h1>
         <p className="lede">
-          forest-kit takes an idea through research, requirements, a design
+          forest takes an idea through research, requirements, a design
           direction and a build, to something you can push. It runs inside{" "}
           <a href="https://claude.com/claude-code">Claude Code</a> as a set of
           skills. There is no separate app.
@@ -101,7 +101,7 @@ export default function Overview() {
       </section>
 
       <section>
-        <p className="label">Why forest-kit</p>
+        <p className="label">Why forest</p>
         <table className="uses">
           <tbody>
             <tr>
@@ -128,7 +128,7 @@ export default function Overview() {
       <section>
         <p className="label">Start a project</p>
         <ol className="plain">
-          <li><a href="https://github.com/ko-di/forest-kit/releases/latest/download/forest.zip">Download forest</a>.</li>
+          <li><a href="/forest.zip">Download forest</a>.</li>
           <li>Unzip it and rename the folder after your idea.</li>
           <li>Open the folder in Claude Code, in the Claude app.</li>
           <li>Type <code>/pack</code>.</li>

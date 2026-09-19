@@ -23,7 +23,6 @@ export function Nav({ here }: { here: string }) {
         ))}
       </div>
       <NavMenu links={LINKS} here={here} />
-      <a href="https://github.com/ko-di/forest-kit" className="nav-out">GitHub</a>
       <ThemeToggle />
     </nav>
   );

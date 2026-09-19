@@ -1,5 +1,5 @@
 /**
- * The forest-kit banner, drawn on a 160 x 64 pixel grid and cropped to its
+ * The forest banner, drawn on a 160 x 64 pixel grid and cropped to its
  * content.
  *
  * Generated. Do not hand-edit the path. Change the scene in
