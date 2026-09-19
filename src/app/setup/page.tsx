@@ -45,7 +45,7 @@ export default function Setup() {
         <ol className="plain">
           <li><a href="/forest.zip">Download forest</a>. You get <code>forest.zip</code>.</li>
           <li>Unzip it, and rename the folder to your project&rsquo;s name. Put it wherever you keep your work.</li>
-          <li>Open the folder in Claude Code, in the Claude app.</li>
+          <li>Open the folder in Claude Code, in the Claude app. Say yes when it asks whether you trust the folder.</li>
           <li>Type <code>/pack</code>.</li>
         </ol>
         <p>
@@ -78,14 +78,17 @@ export default function Setup() {
 
       <section>
         <p className="label">Updates</p>
-        <h2>One download per project.</h2>
+        <h2>A new version every couple of weeks. You choose when.</h2>
         <p>
-          A new version comes out every couple of weeks. The download link
-          always gives you the newest, so your next project starts on it.
+          When one is out, Claude says so in one line at the start of a
+          session. Type <code>/resupply</code>: it shows what changed, asks,
+          and swaps forest&rsquo;s own folder for the new one. Your project
+          files and your app are never touched, and the old version is kept
+          in case. Then restart Claude Code so it reads the new one.
         </p>
         <p className="meta">
-          A project you have already started keeps the version it began with,
-          and keeps working. Nothing changes in it unless you change it.
+          Claude Code asks once for permission to change the{" "}
+          <code>.claude</code> folder. That prompt is the update.
         </p>
       </section>
 
@@ -93,6 +96,10 @@ export default function Setup() {
         <p className="label">If something goes wrong</p>
         <table className="uses">
           <tbody>
+            <tr>
+              <td>Claude Code asks whether you trust this folder</td>
+              <td>Normal the first time you open any folder. Say yes: it lets forest&rsquo;s own settings apply, including the once-a-day check for a newer version.</td>
+            </tr>
             <tr>
               <td><code>/pack</code> isn&rsquo;t offered</td>
               <td>Claude Code is open in a different folder. Choose the project folder itself: the one with the README in it.</td>
@@ -108,6 +115,10 @@ export default function Setup() {
             <tr>
               <td>You can&rsquo;t see a <code>.claude</code> folder</td>
               <td>It is hidden on purpose. You never need to open it.</td>
+            </tr>
+            <tr>
+              <td><code>/resupply</code> asks to change the <code>.claude</code> folder</td>
+              <td>That is the update itself: forest lives there. Say yes. Nothing in <code>project/</code> or <code>app/</code> is touched.</td>
             </tr>
             <tr>
               <td><code>No git repository here yet</code></td>
@@ -131,7 +142,7 @@ export default function Setup() {
           a closing summary of which answers are still thin.
         </p>
         <p>
-          Twenty-five skills come in the download. You have to remember two:{" "}
+          Twenty-six skills come in the download. You have to remember two:{" "}
           <code>/pack</code>, then <code>/trail</code>. The rest are run for you
           at the point they apply, or offered once the deploy is live.
         </p>
