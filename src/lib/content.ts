@@ -132,10 +132,10 @@ export const CHECKS: { when: string; what: string }[] = [
  * after every release. A site describing a version nobody can download is worse
  * than no version at all.
  */
-export const KIT_VERSION = "1.0.2";
+export const KIT_VERSION = "1.0.3";
 
 /**
- * Twenty-four commands exist; two have to be remembered. The list below also has
+ * Twenty-five commands exist; two have to be remembered. The list below also has
  * the /weather gate, which is not a command. The kit runs most of them
  * for you at the point they apply, so listing them flat made the workflow read
  * heavier than it is. Grouped by who invokes them, not alphabetically.
@@ -182,6 +182,7 @@ export const COMMANDS: {
       { cmd: "/animate", does: "Review the motion that's there, and what's missing" },
       { cmd: "/overdrive", does: "One ambitious moment, proposed first" },
       { cmd: "/system", does: "Document the design system as built, and where it drifted" },
+      { cmd: "/resupply", does: "Bring in the newest version of forest. Claude names it when one is out" },
     ],
   },
   {
