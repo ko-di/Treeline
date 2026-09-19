@@ -5,7 +5,6 @@ import { KIT_VERSION } from "@/lib/content";
 export function Footer() {
   return (
     <footer>
-      <a href="https://github.com/ko-di/forest-kit">GitHub</a>
       <a href="https://kodi.design">k-d studio</a>
       <a
         href="https://revolut.me/kdimakos/pocket/CUxQ83rl98"
@@ -14,10 +13,8 @@ export function Footer() {
       >
         Tip the work
       </a>
-      <a href="https://github.com/ko-di/forest-kit/blob/main/CHANGELOG.md">
-        {`v${KIT_VERSION}`}
-      </a>
-      <span className="dim">MIT</span>
+      <span className="dim">{`v${KIT_VERSION}`}</span>
+      <span className="dim">Licensed for use, not for copying</span>
     </footer>
   );
 }

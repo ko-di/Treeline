@@ -126,16 +126,16 @@ export const CHECKS: { when: string; what: string }[] = [
 ];
 
 /**
- * The kit release this site describes. Must match forest-kit's `.kit-version`.
- * Nothing syncs these automatically. scripts/check-kit-version.mjs compares
- * them before every build and fails it if they differ, so bump this after
- * every kit release. A site describing a version nobody can download is worse
+ * The forest release this site describes. Must match forest-studio's VERSION file,
+ * and the copy in public/forest-version.txt. scripts/check-kit-version.mjs
+ * compares them before every build and fails it if they differ, so bump this
+ * after every release. A site describing a version nobody can download is worse
  * than no version at all.
  */
-export const KIT_VERSION = "3.0.0";
+export const KIT_VERSION = "1.0.0";
 
 /**
- * Thirteen commands exist; two have to be remembered. The list below also has
+ * Twenty-four commands exist; two have to be remembered. The list below also has
  * the /weather gate, which is not a command. The kit runs most of them
  * for you at the point they apply, so listing them flat made the workflow read
  * heavier than it is. Grouped by who invokes them, not alphabetically.
@@ -165,7 +165,23 @@ export const COMMANDS: {
       { cmd: "/gather", does: "Offered once three notes are filed. Synthesis" },
       { cmd: "/sketch", does: "Camp 4. Brand and visual direction from your references" },
       { cmd: "/weather", does: "The gate. Fires when Camp 2 closes, and can say turn back" },
-      { cmd: "/ship", does: "Camp 6. Checks, commit, push. The first of four commands there" },
+      { cmd: "/review", does: "Each phase of Camp 5. The five-check quality pass, findings first" },
+      { cmd: "/test", does: "Each phase of Camp 5. Writes and runs the tests for that phase" },
+      { cmd: "/benchmark", does: "Offered in Camp 2. Who else solves this, doing nothing included" },
+      { cmd: "/ship", does: "Camp 6. Checks, commit, push. The first of five commands there" },
+      { cmd: "/a11y-audit", does: "Run by /summit. Accessibility to a standard, with a report" },
+    ],
+  },
+  {
+    group: "The ones you reach for when you need them",
+    note: "Each does one job on what's been built and changes nothing until you say yes.",
+    items: [
+      { cmd: "/refine", does: "Strengthen one thing: harden, optimise, adapt, clarify or onboard" },
+      { cmd: "/tune", does: "Push the design one way: bolder, quieter, colourise or normalise" },
+      { cmd: "/motion", does: "Add motion that has a job, with a reduced-motion fallback" },
+      { cmd: "/animate", does: "Review the motion that's there, and what's missing" },
+      { cmd: "/overdrive", does: "One ambitious moment, proposed first" },
+      { cmd: "/system", does: "Document the design system as built, and where it drifted" },
     ],
   },
   {
@@ -175,6 +191,7 @@ export const COMMANDS: {
       { cmd: "/summit", does: "Verify what actually went live, and write SUMMIT.md" },
       { cmd: "/retro", does: "What worked, what did not, what to keep" },
       { cmd: "/handoff", does: "Package the folder for a client. Client projects only" },
+      { cmd: "/reach", does: "How it reaches people: position, wedge, who first, money, the first thirty days" },
     ],
   },
 ];

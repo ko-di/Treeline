@@ -332,7 +332,6 @@ ul.dashed.spaced li { margin-bottom: 0.9rem; }
 }
 .nav a:hover { color: var(--accent); }
 .nav a[aria-current="page"] { color: var(--text-strong); }
-.nav .nav-out { margin-left: auto; }
 
 /* The row is a pass-through, so its links sit in the nav's own flex gap. */
 .nav-row { display: contents; }

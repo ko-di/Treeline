@@ -4,9 +4,9 @@ import { Footer, Next, Ticks } from "@/components/sections";
 import { COMMANDS } from "@/lib/content";
 
 export const metadata = {
-  title: "Setup · forest-kit",
+  title: "Setup · forest",
   description:
-    "Install forest-kit, what the first session looks like, and what ends up in the project folder.",
+    "Install forest, what the first session looks like, and what ends up in the project folder.",
 };
 
 export default function Setup() {
@@ -43,7 +43,7 @@ export default function Setup() {
         <p className="label">Start a project</p>
         <h2>Download a folder, open it in Claude, type one command.</h2>
         <ol className="plain">
-          <li><a href="https://github.com/ko-di/forest-kit/releases/latest/download/forest.zip">Download forest</a>. You get <code>forest.zip</code>.</li>
+          <li><a href="/forest.zip">Download forest</a>. You get <code>forest.zip</code>.</li>
           <li>Unzip it, and rename the folder to your project&rsquo;s name. Put it wherever you keep your work.</li>
           <li>Open the folder in Claude Code, in the Claude app.</li>
           <li>Type <code>/pack</code>.</li>
@@ -131,7 +131,7 @@ export default function Setup() {
           a closing summary of which answers are still thin.
         </p>
         <p>
-          Fourteen skills come in the download. You have to remember two:{" "}
+          Twenty-five skills come in the download. You have to remember two:{" "}
           <code>/pack</code>, then <code>/trail</code>. The rest are run for you
           at the point they apply, or offered once the deploy is live.
         </p>
@@ -160,23 +160,19 @@ export default function Setup() {
       <section>
         <p className="label">Project structure</p>
         <pre className="term" tabIndex={0}>{`my-idea/
-├─ BRIEF.md              scope, phases, feel, decisions. Hand this to a build tool
-├─ EVIDENCE.md           what you know and how you know it
-├─ compass.json          direction. Every camp reads it
-├─ map.md                the six camps, progress, phases, decisions
-├─ camps/
-│  ├─ 1-intake/          idea.md
-│  ├─ 2-discover/        interview-guide.md, synthesis.md, weather.md
-│  ├─ 3-define/          prd.md
-│  ├─ 4-design/          design.md
-│  ├─ 5-build/           build notes
-│  └─ 6-ship/
-├─ research/raw/         notes, one file per session
-├─ design/decisions/     why each call was made
-├─ memory/session.md     local to your machine, not committed
-├─ SUMMIT.md             what went live, once /summit runs
-├─ retro.md              what to keep for next time
-└─ .forest/role.md       who you are, and how much explanation you want`}</pre>
+├─ README.md               how forest works, and where everything is
+├─ project/                everything forest writes for you
+│  ├─ map.md                 where you are on the trail
+│  ├─ compass.json           the project's direction. Every step reads it
+│  ├─ BRIEF.md               hand this to whoever builds it
+│  ├─ EVIDENCE.md            what you know, and how you know it
+│  ├─ 1-intake/ … 6-ship/    each camp's working files
+│  ├─ research/              your notes from talking to people
+│  ├─ decisions/             why each call was made
+│  ├─ design/                the design system
+│  └─ memory/                one line per session. Local to your machine
+├─ app/                    the product itself, built in Camp 5
+└─ .claude/                forest itself. Hidden; you never need to open it`}</pre>
         <p>
           Plain files throughout, readable at any point. Two do most of the
           work once the thinking is done. <code>BRIEF.md</code> goes to a build
@@ -186,7 +182,7 @@ export default function Setup() {
         <p className="meta">
           What to do with each file, and the prompts for handing the brief to
           Claude Code, Claude, v0, Figma Make or a developer, are in the kit&rsquo;s{" "}
-          <a href="https://github.com/ko-di/forest-kit/blob/main/BUILDING.md">BUILDING.md</a>.
+          <code>BUILDING.md</code>, which comes in the download.
         </p>
         <Next href="/camps" label="What each camp does" />
       </section>

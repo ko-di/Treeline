@@ -1,6 +1,6 @@
 # treeline
 
-The public site for [forest-kit](https://github.com/ko-di/forest-kit).
+The public site for forest, by k-d studio. The kit itself is in the private `forest-studio` repository; the site serves its download.
 
 A treeline is the visible edge where the forest meets open ground — where strangers first see the territory. This is that page.
 
@@ -8,7 +8,7 @@ A treeline is the visible edge where the forest meets open ground — where stra
 
 Four pages. The copy that repeats across them lives in [`src/lib/content.ts`](./src/lib/content.ts) — the six camps, the checkpoints, the command list, the use cases. Page-specific prose sits in the page file itself.
 
-Everything here describes [forest-kit](https://github.com/ko-di/forest-kit). The kit is the source of truth: if the two disagree, the site is wrong. Camp names, file paths and command names should all be checkable against the kit's `.claude/skills/`.
+Everything here describes forest. The kit is the source of truth: if the two disagree, the site is wrong. Camp names, file paths and command names should all be checkable against the kit's `.claude/skills/`.
 
 | Page | Covers |
 |---|---|
@@ -65,4 +65,4 @@ Pushes to `main` build and promote to production automatically — the GitHub re
 
 ## License
 
-[MIT](./LICENSE).
+The site is [MIT](./LICENSE). forest itself, served from `public/forest.zip`, is under k-d studio's own licence, included in the download.

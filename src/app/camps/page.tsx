@@ -4,7 +4,7 @@ import { Footer, Next, Ticks } from "@/components/sections";
 import { CAMPS, CHECKS } from "@/lib/content";
 
 export const metadata = {
-  title: "Camps · forest-kit",
+  title: "Camps · forest",
   description:
     "What each of the six camps does, when it runs, and what it leaves behind.",
 };

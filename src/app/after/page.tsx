@@ -3,7 +3,7 @@ import { Footer, Next, Ticks } from "@/components/sections";
 import { AFTER } from "@/lib/content";
 
 export const metadata = {
-  title: "After the documents · forest-kit",
+  title: "After the documents · forest",
   description:
     "What happens once the early camps are filled in: building from the brief, shipping, verifying, and closing out.",
 };
@@ -99,7 +99,7 @@ export default function After() {
         <p className="meta">
           Full prompts for each tool, which files to send, and what to do when
           what comes back is wrong, are in{" "}
-          <a href="https://github.com/ko-di/forest-kit/blob/main/BUILDING.md">BUILDING.md</a>.
+          <code>BUILDING.md</code>, which comes in the download.
         </p>
         <Next href="/setup" label="Setup and project structure" />
       </section>
