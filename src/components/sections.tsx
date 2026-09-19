@@ -14,7 +14,6 @@ export function Footer() {
         Tip the work
       </a>
       <span className="dim">{`v${KIT_VERSION}`}</span>
-      <span className="dim">Licensed for use, not for copying</span>
     </footer>
   );
 }
