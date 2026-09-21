@@ -177,7 +177,7 @@ export default function Setup() {
 │  ├─ compass.json           the project's direction. Every step reads it
 │  ├─ BRIEF.md               hand this to whoever builds it
 │  ├─ EVIDENCE.md            what you know, and how you know it
-│  ├─ 1-intake/ … 6-ship/    each camp's working files
+│  ├─ 1-frame/ … 6-ship/     each camp's working files
 │  ├─ research/              your notes from talking to people
 │  ├─ decisions/             why each call was made
 │  ├─ design/                the design system

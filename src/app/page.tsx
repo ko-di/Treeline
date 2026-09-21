@@ -74,17 +74,17 @@ export default function Overview() {
         <p className="label">How it works</p>
         <Flow />
         <p>
-          <strong>Intake feeds everything.</strong> Every later camp reads the
+          <strong>Frame feeds everything.</strong> Every later camp reads the
           same two files, <code>compass.json</code> for direction and{" "}
           <code>map.md</code> for progress, so an answer given once is not asked
           for again.
         </p>
         <p>
-          <strong>Discover sits before Design</strong> so the direction is drawn
+          <strong>Learn sits before Shape</strong> so the direction is drawn
           for someone real rather than someone assumed.
         </p>
         <p>
-          <strong>One gate sits between them.</strong> When Discover closes,{" "}
+          <strong>One gate sits between them.</strong> When Learn closes,{" "}
           <code>/weather</code> reads your notes and returns press on, reroute,
           or turn back, weighing each claim by whether you watched it, heard it,
           reasoned it, or assumed it. Every reading names at least two routes

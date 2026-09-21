@@ -55,7 +55,7 @@ export default function After() {
           What did you cut that you would put back?
         </p>
         <p>
-          The first is the one that matters. Intake asked you to name a
+          The first is the one that matters. Frame asked you to name a
           beneficiary. Ninety days on, the file asks whether that is who
           actually turned up. If it was someone else, that is worth knowing
           while the project is young enough to follow them instead.

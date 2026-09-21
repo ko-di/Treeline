@@ -3,7 +3,7 @@
  * row for wide screens, and a column for phones, where the row would shrink
  * its labels to about six pixels. CSS shows one or the other.
  */
-const LABELS = ["Intake", "Discover", "Define", "Design", "Build", "Ship"];
+const LABELS = ["Frame", "Learn", "Decide", "Shape", "Build", "Ship"];
 const LOOP_LABEL = "what you learn feeds the next project";
 
 export function Flow() {
@@ -16,7 +16,7 @@ export function Flow() {
 }
 
 function Row() {
-  const W = 84;      // box width, wide enough for "Discover"
+  const W = 84;      // box width, wide enough for "Decide"
   const STEP = 114;  // box + gap
   const X0 = 33;     // left margin
 

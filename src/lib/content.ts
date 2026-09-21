@@ -19,8 +19,8 @@ type Camp = {
 export const CAMPS: Camp[] = [
   {
     n: "01",
-    slug: "intake",
-    name: "Intake",
+    slug: "frame",
+    name: "Frame",
     summary: "Your role, who this helps, and the first shape of the idea.",
     use: "Start here. `/pack` scaffolds the folder and asks the questions the rest builds on.",
     does: [
@@ -29,26 +29,26 @@ export const CAMPS: Camp[] = [
       "If you do not have a concrete idea, runs an idea hunt instead of pressing on with a blank one",
       "Drafts the project map, which every later camp reads and updates",
     ],
-    output: "compass.json, map.md",
+    output: "project/compass.json, project/map.md",
   },
   {
     n: "02",
-    slug: "discover",
-    name: "Discover",
+    slug: "learn",
+    name: "Learn",
     summary: "Conversations, what they add up to, then an honest reading.",
     use: "The camp most often skipped, and the one the gate at the end of it measures.",
     does: [
       "`/scout` drafts an interview guide and waits while you go and have the conversations",
-      "Notes land in `research/raw/`, one file per session, each recording the method it came from",
+      "Notes land in `project/research/`, one file per session, each recording the method it came from",
       "`/gather` looks for patterns across notes rather than within one, and wants three before it calls anything a pattern",
       "`/weather` weighs the evidence by how you came by it: watched, heard, reasoned or assumed",
     ],
-    output: "research/raw/, camps/2-discover/synthesis.md",
+    output: "project/research/, project/2-learn/synthesis.md",
   },
   {
     n: "03",
-    slug: "define",
-    name: "Define",
+    slug: "decide",
+    name: "Decide",
     summary: "Requirements, each written so someone can tell when it is done.",
     use: "Runs once the weather reading says press on.",
     does: [
@@ -56,12 +56,12 @@ export const CAMPS: Camp[] = [
       "Each one names who it serves, and the condition that would show it is finished",
       "Scope splits three ways, in, out and later, and the out list is the half that holds",
     ],
-    output: "camps/3-define/prd.md",
+    output: "project/3-decide/prd.md",
   },
   {
     n: "04",
-    slug: "design",
-    name: "Design",
+    slug: "shape",
+    name: "Shape",
     summary: "A direction derived from your references, not described in the abstract.",
     use: "Not gated to this point. It runs whenever imagery turns up.",
     does: [
@@ -73,7 +73,7 @@ export const CAMPS: Camp[] = [
       "Without references it does not guess. It walks you through assembling a mood board first",
       "It declines to draw a logo or wordmark, and says which parts of brand it can help with instead",
     ],
-    output: "camps/4-design/design.md, design/decisions/",
+    output: "project/design/design.md, project/decisions/",
   },
   {
     n: "05",
@@ -88,21 +88,21 @@ export const CAMPS: Camp[] = [
       "Checks each finished phase against the design tokens and names every divergence rather than letting it pass",
       "Decisions keep getting captured as they come up, rather than reconstructed later",
     ],
-    output: "BRIEF.md, camps/5-build/, map.md",
+    output: "project/BRIEF.md, project/5-build/, project/map.md",
   },
   {
     n: "06",
     slug: "ship",
     name: "Ship",
     summary: "Checks, deploy, verification, and what you would do differently.",
-    use: "`/ship`, then `/summit`, then `/retro`.",
+    use: "`/ship`, then `/summit`, `/retro`, `/reach`, and `/handoff` for client work.",
     does: [
       "Before any of it, `/ship` asks what you expect to regret in three weeks and records the answer",
       "Then typecheck, tests and lint, a clean commit message, and a push",
       "`/summit` checks what actually went live: analytics, metadata, performance, accessibility",
       "`SUMMIT.md` carries a reflection to answer three months out; `/retro` names what to keep for next time",
     ],
-    output: "SUMMIT.md, retro.md",
+    output: "project/SUMMIT.md, project/retro.md",
   },
 ];
 
@@ -200,7 +200,7 @@ export const COMMANDS: {
 export const USES: { who: string; what: string }[] = [
   {
     who: "You have an idea and no documents",
-    what: "Intake through to requirements in a sitting, then a brief to build from.",
+    what: "Frame through to requirements in a sitting, then a brief to build from.",
   },
   {
     who: "You need to know the problem is real",
@@ -230,7 +230,7 @@ export const AFTER: { step: string; what: string }[] = [
   },
   {
     step: "Check it against the design",
-    what: "When a phase is done, the build is compared with `camps/4-design/design.md` and every divergence is listed. Fix the build, or update the design if the build found something better. Leaving one unnamed is how a design system ends up unused.",
+    what: "When a phase is done, the build is compared with `project/design/design.md` and every divergence is listed. Fix the build, or update the design if the build found something better. Leaving one unnamed is how a design system ends up unused.",
   },
   {
     step: "Ship",
