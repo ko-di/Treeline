@@ -41,7 +41,7 @@ Breaking: no · Project update: no
 
 ## 1.0.0
 
-The first release of forest-studio. Breaking: no · Project update: no. It follows forest-kit 3.0.0, which stays available under MIT.
+The first release of forest-studio. Breaking: no · Project update: no. It follows forest-kit 3.0.0.
 
 - **The whole studio, in the folder.** k-d studio's design, brand, motion and stack standards come with it, in full, and every command follows them. There is no cut-down version any more.
 - **Build and Ship are as strong as the thinking.** Each phase ends with `/review` (the 5-check quality pass) and `/test`. When something needs work: `/refine`, `/tune`, `/motion`, `/animate`, `/overdrive`, `/system`. Before the summit, `/a11y-audit`.
