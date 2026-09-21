@@ -43,7 +43,7 @@ export default function Setup() {
         <p className="label">Start a project</p>
         <h2>Download a folder, open it in Claude, type one command.</h2>
         <ol className="plain">
-          <li><a href="/forest.zip">Download forest</a>. You get <code>forest.zip</code>.</li>
+          <li><a href="/api/download">Download forest</a>. You get <code>forest.zip</code>.</li>
           <li>Unzip it, and rename the folder to your project&rsquo;s name. Put it wherever you keep your work.</li>
           <li>Open the folder in Claude Code, in the Claude app. Say yes when it asks whether you trust the folder.</li>
           <li>Type <code>/pack</code>.</li>

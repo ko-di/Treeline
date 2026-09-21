@@ -128,7 +128,7 @@ export default function Overview() {
       <section>
         <p className="label">Start a project</p>
         <ol className="plain">
-          <li><a href="/forest.zip">Download forest</a>.</li>
+          <li><a href="/api/download">Download forest</a>.</li>
           <li>Unzip it and rename the folder after your idea.</li>
           <li>Open the folder in Claude Code, in the Claude app.</li>
           <li>Type <code>/pack</code>.</li>

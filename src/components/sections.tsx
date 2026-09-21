@@ -14,6 +14,7 @@ export function Footer() {
         Tip the work
       </a>
       <Link href="/versions" className="dim">{`v${KIT_VERSION}`}</Link>
+      <Link href="/privacy" className="dim">Privacy</Link>
     </footer>
   );
 }

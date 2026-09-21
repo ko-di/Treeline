@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -38,6 +39,8 @@ export default function RootLayout({
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src="/theme-init.js" />
         {children}
+        {/* Cookieless page counts. No banner needed, and none shown. */}
+        <Analytics />
       </body>
     </html>
   );
