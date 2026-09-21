@@ -13,21 +13,32 @@ export function Footer() {
       >
         Tip the work
       </a>
-      <span className="dim">{`v${KIT_VERSION}`}</span>
+      <Link href="/versions" className="dim">{`v${KIT_VERSION}`}</Link>
     </footer>
   );
 }
 
 /**
- * Copy in content.ts marks commands and paths with backticks, the way the
- * kit's own markdown does. This renders them as <code>. Splitting on the
- * backtick makes every odd segment a marked one. No HTML is built from the
- * string, so there is nothing to inject.
+ * Copy in content.ts and the release notes mark commands and paths with
+ * backticks, the way the kit's own markdown does, and the release notes open
+ * each bullet with a **lead-in**. This renders the first as <code> and the
+ * second as <strong>. Splitting on the marker makes every odd segment a
+ * marked one. No HTML is built from the string, so there is nothing to inject.
  */
+function ticks(text: string, key: string) {
+  return text
+    .split("`")
+    .map((part, i) => (i % 2 ? <code key={`${key}-${i}`}>{part}</code> : part));
+}
+
 export function Ticks({ children }: { children: string }) {
   return (
     <>
-      {children.split("`").map((part, i) => (i % 2 ? <code key={i}>{part}</code> : part))}
+      {children
+        .split("**")
+        .map((seg, i) =>
+          i % 2 ? <strong key={i}>{ticks(seg, `s${i}`)}</strong> : ticks(seg, `t${i}`),
+        )}
     </>
   );
 }

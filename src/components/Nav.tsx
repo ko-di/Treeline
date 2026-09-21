@@ -7,12 +7,13 @@ const LINKS = [
   { href: "/camps", label: "Camps" },
   { href: "/after", label: "After" },
   { href: "/setup", label: "Setup" },
+  { href: "/versions", label: "Versions" },
 ];
 
 export function Nav({ here }: { here: string }) {
   return (
     <nav className="nav">
-      {/* The same four pages twice: a row on desktop, a dropdown on mobile.
+      {/* The same pages twice: a row on desktop, a dropdown on mobile.
           CSS shows one and removes the other, so only one reaches the
           accessibility tree. */}
       <div className="nav-row">
