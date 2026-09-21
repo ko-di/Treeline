@@ -7,7 +7,6 @@ const LINKS = [
   { href: "/camps", label: "Camps" },
   { href: "/after", label: "After" },
   { href: "/setup", label: "Setup" },
-  { href: "/versions", label: "Versions" },
 ];
 
 export function Nav({ here }: { here: string }) {
