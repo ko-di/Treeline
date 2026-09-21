@@ -138,11 +138,11 @@ export default function Setup() {
         </p>
         <p>
           <code>/pack</code> asks your role and how much detail you want with
-          each question, then starts intake. Expect twenty to forty minutes, and
+          each question, then starts intake. Expect 20 to 40 minutes, and
           a closing summary of which answers are still thin.
         </p>
         <p>
-          Twenty-six skills come in the download. You have to remember two:{" "}
+          26 skills come in the download. You have to remember 2:{" "}
           <code>/pack</code>, then <code>/trail</code>. The rest are run for you
           at the point they apply, or offered once the deploy is live.
         </p>
@@ -185,15 +185,15 @@ export default function Setup() {
 ├─ app/                    the product itself, built in Camp 5
 └─ .claude/                forest itself. Hidden; you never need to open it`}</pre>
         <p>
-          Plain files throughout, readable at any point. Two do most of the
+          Plain files throughout, readable at any point. 2 do most of the
           work once the thinking is done. <code>BRIEF.md</code> goes to a build
           tool. <code>EVIDENCE.md</code> goes to anyone asking why the thing is
           worth doing.
         </p>
         <p className="meta">
-          What to do with each file, and the prompts for handing the brief to
-          Claude Code, Claude, v0, Figma Make or a developer, are in the kit&rsquo;s{" "}
-          <code>BUILDING.md</code>, which comes in the download.
+          <code>BUILDING.md</code> comes in the download. It says what to do with
+          each file, and holds the prompts for handing the brief to Claude Code,
+          Claude, v0, Figma Make or a developer.
         </p>
         <Next href="/camps" label="What each camp does" />
       </section>

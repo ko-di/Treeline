@@ -6,7 +6,7 @@ import { CAMPS, CHECKS } from "@/lib/content";
 export const metadata = {
   title: "Camps · forest",
   description:
-    "What each of the six camps does, when it runs, and what it leaves behind.",
+    "What each of the 6 camps does, when it runs, and what it leaves behind.",
 };
 
 export default function Camps() {
@@ -19,7 +19,7 @@ export default function Camps() {
       <header>
         <h1>Camps</h1>
         <p className="lede">
-          Six camps. You can walk them in order with <code>/trail</code>, or go
+          6 camps. You can walk them in order with <code>/trail</code>, or go
           straight to one with <code>/camp</code>. Shape in particular runs
           whenever you have references, not only when you reach it.
         </p>
@@ -45,7 +45,7 @@ export default function Camps() {
 
       <section>
         <p className="label">Where it asks for more</p>
-        <h2>Four points it pushes back.</h2>
+        <h2>4 points it pushes back.</h2>
         <p>
           Each is a question rather than a block, and each accepts &ldquo;not
           yet&rdquo; as an answer.

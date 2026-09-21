@@ -46,7 +46,7 @@ export default function After() {
         <h2>The part most workflows skip.</h2>
         <p>
           <code>SUMMIT.md</code> is written with a section you cannot answer yet.
-          It carries the date, ninety days from the day you shipped, and three
+          It carries the date, ninety days from the day you shipped, and 3
           questions to answer cold.
         </p>
         <p>
@@ -66,10 +66,10 @@ export default function After() {
         <p className="label">Building it</p>
         <h2>Handing the brief to a tool.</h2>
         <p>
-          <code>BRIEF.md</code> is the file you hand over. It stands on its own:
-          scope with the out list kept word for word, phases you could ship
-          separately, how it should feel, the decisions already made, and what is
-          still missing.
+          <code>BRIEF.md</code> is the file you hand over. It stands on its own.
+          It holds scope with the out list kept word for word, and phases you
+          could ship separately. It says how it should feel, the decisions already
+          made, and what is still missing.
         </p>
         <table className="uses">
           <tbody>
@@ -83,7 +83,7 @@ export default function After() {
             </tr>
             <tr>
               <td><strong>v0, Lovable, Bolt, Figma Make</strong></td>
-              <td>These want a prompt rather than a document. Paste the brief&rsquo;s first three sections and the phase you want.</td>
+              <td>These want a prompt rather than a document. Paste the brief&rsquo;s first 3 sections and the phase you want.</td>
             </tr>
             <tr>
               <td><strong>A developer or an agency</strong></td>
@@ -93,13 +93,13 @@ export default function After() {
         </table>
         <p>
           When a phase comes back, <code>/camp build</code> compares it with the
-          design and lists every divergence, so drift gets named while it is one
-          component rather than twenty.
+          design and lists every divergence. Drift gets named while it is one
+          component rather than 20.
         </p>
         <p className="meta">
-          Full prompts for each tool, which files to send, and what to do when
-          what comes back is wrong, are in{" "}
-          <code>BUILDING.md</code>, which comes in the download.
+          <code>BUILDING.md</code> comes in the download. It has full prompts for
+          each tool, which files to send, and what to do when what comes back
+          is wrong.
         </p>
         <Next href="/setup" label="Setup and project structure" />
       </section>

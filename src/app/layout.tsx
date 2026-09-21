@@ -4,12 +4,12 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "forest · scale design without losing craft",
   description:
-    "forest takes an idea through research, requirements, a design direction and a build, to something you can push. Six camps, inside Claude Code. From k-d studio.",
+    "forest takes an idea through research, requirements, a design direction and a build, to something you can push. 6 camps, inside Claude Code. From k-d studio.",
   metadataBase: new URL("https://treeline-sand.vercel.app"),
   openGraph: {
     title: "forest · scale design without losing craft",
     description:
-      "An idea through research, requirements, a design direction and a build. Six camps, inside Claude Code.",
+      "An idea through research, requirements, a design direction and a build. 6 camps, inside Claude Code.",
     type: "website",
   },
   twitter: {

@@ -40,7 +40,7 @@ export const CAMPS: Camp[] = [
     does: [
       "`/scout` drafts an interview guide and waits while you go and have the conversations",
       "Notes land in `project/research/`, one file per session, each recording the method it came from",
-      "`/gather` looks for patterns across notes rather than within one, and wants three before it calls anything a pattern",
+      "`/gather` looks for patterns across notes rather than within one, and wants 3 before it calls anything a pattern",
       "`/weather` weighs the evidence by how you came by it: watched, heard, reasoned or assumed",
     ],
     output: "project/research/, project/2-learn/synthesis.md",
@@ -54,7 +54,7 @@ export const CAMPS: Camp[] = [
     does: [
       "Turns what you learned into numbered requirements",
       "Each one names who it serves, and the condition that would show it is finished",
-      "Scope splits three ways, in, out and later, and the out list is the half that holds",
+      "Scope splits 3 ways, in, out and later, and the out list is the half that holds",
     ],
     output: "project/3-decide/prd.md",
   },
@@ -65,10 +65,10 @@ export const CAMPS: Camp[] = [
     summary: "A direction derived from your references, not described in the abstract.",
     use: "Not gated to this point. It runs whenever imagery turns up.",
     does: [
-      "Takes a Figma file, screenshots or a live site, and gives each reference a job — this one for colour, that one for density — rather than picking a favourite",
-      "Where two references disagree it says so and asks, instead of averaging them into a fourth thing nobody chose",
+      "Takes a Figma file, screenshots or a live site, and gives each reference a job, this one for colour, that one for density, rather than picking a favourite",
+      "Where 2 references disagree it says so and asks, instead of averaging them into a fourth thing nobody chose",
       "Derives colour, type, spacing, shape and component states, and checks every contrast pair before writing the file",
-      "Records which reference each decision came from, so in six months the file can answer why, not just what",
+      "Records which reference each decision came from, so in 6 months the file can answer why as well as what",
       "Writes `design.md` in Google's open format: tokens a build tool can read, prose for the reasoning",
       "Without references it does not guess. It walks you through assembling a mood board first",
       "It declines to draw a logo or wordmark, and says which parts of brand it can help with instead",
@@ -97,10 +97,10 @@ export const CAMPS: Camp[] = [
     summary: "Checks, deploy, verification, and what you would do differently.",
     use: "`/ship`, then `/summit`, `/retro`, `/reach`, and `/handoff` for client work.",
     does: [
-      "Before any of it, `/ship` asks what you expect to regret in three weeks and records the answer",
+      "Before any of it, `/ship` asks what you expect to regret in 3 weeks and records the answer",
       "Then typecheck, tests and lint, a clean commit message, and a push",
       "`/summit` checks what actually went live: analytics, metadata, performance, accessibility",
-      "`SUMMIT.md` carries a reflection to answer three months out; `/retro` names what to keep for next time",
+      "`SUMMIT.md` carries a reflection to answer 3 months out; `/retro` names what to keep for next time",
     ],
     output: "project/SUMMIT.md, project/retro.md",
   },
@@ -112,8 +112,8 @@ export const CHECKS: { when: string; what: string }[] = [
     what: "Asks for someone you have actually met, and offers to record that you do not know yet, a normal answer at intake.",
   },
   {
-    when: "You have fewer than three research notes",
-    what: "Writes up what struck you as open questions rather than themes. Three is where a pattern becomes distinguishable from a one-off.",
+    when: "You have fewer than 3 research notes",
+    what: "Writes up what struck you as open questions rather than themes. 3 is where a pattern becomes distinguishable from a one-off.",
   },
   {
     when: "You ask it to make a logo",
@@ -121,7 +121,7 @@ export const CHECKS: { when: string; what: string }[] = [
   },
   {
     when: "You are about to ship",
-    what: "Asks what you expect to regret in three weeks, and records whether you fixed it or accepted it.",
+    what: "Asks what you expect to regret in 3 weeks, and records whether you fixed it or accepted it.",
   },
 ];
 
@@ -135,7 +135,7 @@ export const CHECKS: { when: string; what: string }[] = [
 export const KIT_VERSION = "1.0.3";
 
 /**
- * Twenty-five commands exist; two have to be remembered. The list below also has
+ * 20-5 commands exist; 2 have to be remembered. The list below also has
  * the /weather gate, which is not a command. The kit runs most of them
  * for you at the point they apply, so listing them flat made the workflow read
  * heavier than it is. Grouped by who invokes them, not alphabetically.
@@ -147,7 +147,7 @@ export const COMMANDS: {
 }[] = [
   {
     group: "The ones you type",
-    note: "Two of these are the whole workflow. The rest are there when you want them.",
+    note: "2 of these are the whole workflow. The rest are there when you want them.",
     items: [
       { cmd: "/pack", does: "Set up the project and run intake. The only way in" },
       { cmd: "/trail", does: "Move through the camps in order, running the right command at each" },
@@ -162,13 +162,13 @@ export const COMMANDS: {
     note: "You can type these. You do not need to know they exist.",
     items: [
       { cmd: "/scout", does: "Camp 2. Interviews, audience, the problem" },
-      { cmd: "/gather", does: "Offered once three notes are filed. Synthesis" },
+      { cmd: "/gather", does: "Offered once 3 notes are filed. Synthesis" },
       { cmd: "/sketch", does: "Camp 4. Brand and visual direction from your references" },
       { cmd: "/weather", does: "The gate. Fires when Camp 2 closes, and can say turn back" },
-      { cmd: "/review", does: "Each phase of Camp 5. The five-check quality pass, findings first" },
+      { cmd: "/review", does: "Each phase of Camp 5. The 5-check quality pass, findings first" },
       { cmd: "/test", does: "Each phase of Camp 5. Writes and runs the tests for that phase" },
       { cmd: "/benchmark", does: "Offered in Camp 2. Who else solves this, doing nothing included" },
-      { cmd: "/ship", does: "Camp 6. Checks, commit, push. The first of five commands there" },
+      { cmd: "/ship", does: "Camp 6. Checks, commit, push. The first of 5 commands there" },
       { cmd: "/a11y-audit", does: "Run by /summit. Accessibility to a standard, with a report" },
     ],
   },
@@ -192,7 +192,7 @@ export const COMMANDS: {
       { cmd: "/summit", does: "Verify what actually went live, and write SUMMIT.md" },
       { cmd: "/retro", does: "What worked, what did not, what to keep" },
       { cmd: "/handoff", does: "Package the folder for a client. Client projects only" },
-      { cmd: "/reach", does: "How it reaches people: position, wedge, who first, money, the first thirty days" },
+      { cmd: "/reach", does: "How it reaches people: position, wedge, who first, money, the first 30 days" },
     ],
   },
 ];
@@ -234,15 +234,15 @@ export const AFTER: { step: string; what: string }[] = [
   },
   {
     step: "Ship",
-    what: "`/ship` runs quality checks, commits and pushes. Before it does, it asks what you expect to regret in three weeks and records your answer. It does not deploy unless the project is already set up to deploy on push.",
+    what: "`/ship` runs quality checks, commits and pushes. Before it does, it asks what you expect to regret in 3 weeks and records your answer. It does not deploy unless the project is already set up to deploy on push.",
   },
   {
     step: "Verify what went live",
-    what: "`/summit` checks the deployment: analytics, metadata, performance, accessibility. It writes `SUMMIT.md` and leaves three questions dated ninety days out.",
+    what: "`/summit` checks the deployment: analytics, metadata, performance, accessibility. It writes `SUMMIT.md` and leaves 3 questions dated ninety days out.",
   },
   {
     step: "Close it out",
-    what: "`/retro` covers what worked, what did not, and three things to keep. `/handoff` packages the folder for a client and verifies the access transfers. Neither runs on its own, so you pick the moment.",
+    what: "`/retro` covers what worked, what did not, and 3 things to keep. `/handoff` packages the folder for a client and verifies the access transfers. Neither runs on its own, so you pick the moment.",
   },
   {
     step: "Ninety days on, then a second version",

@@ -31,7 +31,7 @@ export default function OpengraphImage() {
         </svg>
         <div style={{ marginTop: 56, display: "flex" }}>
           An idea through research, requirements, a design direction and a
-          build. Six camps, inside Claude Code.
+          build. 6 camps, inside Claude Code.
         </div>
         <div style={{ marginTop: 20, fontSize: 26, color: "#9aa8d8", display: "flex" }}>
           From k-d studio

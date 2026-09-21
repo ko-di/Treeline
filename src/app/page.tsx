@@ -21,7 +21,7 @@ export default function Overview() {
           skills. There is no separate app.
         </p>
         <p>
-          Six camps run from the first questions through research, requirements, a
+          6 camps run from the first questions through research, requirements, a
           design direction, the build itself, and a check once the thing is live.
           Everything is written to plain files in one folder you own.
         </p>
@@ -42,7 +42,7 @@ export default function Overview() {
         </table>
         <p>
           It covers product thinking, user research, a design direction and the
-          technical planning, across six camps.
+          technical planning, across 6 camps.
         </p>
         <p className="meta">
           It does not cover go-to-market. Camp 3 records how you intend to reach
@@ -74,28 +74,28 @@ export default function Overview() {
         <p className="label">How it works</p>
         <Flow />
         <p>
-          <strong>Frame feeds everything.</strong> Every later camp reads the
-          same two files, <code>compass.json</code> for direction and{" "}
+          Frame feeds everything. Every later camp reads the
+          same 2 files, <code>compass.json</code> for direction and{" "}
           <code>map.md</code> for progress, so an answer given once is not asked
           for again.
         </p>
         <p>
-          <strong>Learn sits before Shape</strong> so the direction is drawn
+          Learn sits before Shape so the direction is drawn
           for someone real rather than someone assumed.
         </p>
         <p>
-          <strong>One gate sits between them.</strong> When Learn closes,{" "}
+          One gate sits between them. When Learn closes,{" "}
           <code>/weather</code> reads your notes and returns press on, reroute,
-          or turn back, weighing each claim by whether you watched it, heard it,
-          reasoned it, or assumed it. Every reading names at least two routes
+          or turn back. It weighs each claim by whether you watched it, heard it,
+          reasoned it, or assumed it. Every reading names at least 2 routes
           onward, and you can overrule any of them. The override is written down
           and quoted back to you at <code>/ship</code>, against what you said you
           would regret.
         </p>
         <p>
-          <strong>Ship closes the loop.</strong> Before anything goes out you are
-          asked what you expect to regret in three weeks.{" "}
-          <code>SUMMIT.md</code> carries a reflection to answer three months on,
+          Ship closes the loop. Before anything goes out you are
+          asked what you expect to regret in 3 weeks.{" "}
+          <code>SUMMIT.md</code> carries a reflection to answer 3 months on,
           and <code>/retro</code> names what to take to the next project.
         </p>
       </section>
@@ -110,7 +110,7 @@ export default function Overview() {
             </tr>
             <tr>
               <td><strong>It records why</strong></td>
-              <td>Every claim tagged by source. Every design token traced to the reference it came from. In six months the folder answers <em>why is it this</em>, not just <em>what is it</em>.</td>
+              <td>Every claim tagged by source. Every design token traced to the reference it came from. In 6 months the folder answers why it is this, and not only what it is.</td>
             </tr>
             <tr>
               <td><strong>It builds</strong></td>
