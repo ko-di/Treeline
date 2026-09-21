@@ -21,7 +21,7 @@ export default function Overview() {
           skills. There is no separate app.
         </p>
         <p>
-          6 camps run from the first questions through research, requirements, a
+          The 6 camps run from the first questions through research, requirements, a
           design direction, the build itself, and a check once the thing is live.
           Everything is written to plain files in one folder you own.
         </p>

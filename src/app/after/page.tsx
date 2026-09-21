@@ -42,11 +42,11 @@ export default function After() {
       </section>
 
       <section>
-        <p className="label">Ninety days on</p>
+        <p className="label">After 90 days</p>
         <h2>The part most workflows skip.</h2>
         <p>
           <code>SUMMIT.md</code> is written with a section you cannot answer yet.
-          It carries the date, ninety days from the day you shipped, and 3
+          It carries the date, 90 days from the day you shipped, and 3
           questions to answer cold.
         </p>
         <p>
@@ -56,7 +56,7 @@ export default function After() {
         </p>
         <p>
           The first is the one that matters. Frame asked you to name a
-          beneficiary. Ninety days on, the file asks whether that is who
+          beneficiary. 90 days on, the file asks whether that is who
           actually turned up. If it was someone else, that is worth knowing
           while the project is young enough to follow them instead.
         </p>
@@ -79,7 +79,7 @@ export default function After() {
             </tr>
             <tr>
               <td><strong>Claude, or Claude Design</strong></td>
-              <td>Attach both files and ask for phase 1 as an artifact, using the tokens exactly and nothing outside the scope list.</td>
+              <td>Attach both files and ask for phase 1 as an &lsquo;artifact&rsquo;, using the tokens exactly and nothing outside the scope list.</td>
             </tr>
             <tr>
               <td><strong>v0, Lovable, Bolt, Figma Make</strong></td>

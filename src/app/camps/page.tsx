@@ -19,7 +19,7 @@ export default function Camps() {
       <header>
         <h1>Camps</h1>
         <p className="lede">
-          6 camps. You can walk them in order with <code>/trail</code>, or go
+          There are 6 camps. You can walk them in order with <code>/trail</code>, or go
           straight to one with <code>/camp</code>. Shape in particular runs
           whenever you have references, not only when you reach it.
         </p>

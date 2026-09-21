@@ -65,7 +65,7 @@ export const CAMPS: Camp[] = [
     summary: "A direction derived from your references, not described in the abstract.",
     use: "Not gated to this point. It runs whenever imagery turns up.",
     does: [
-      "Takes a Figma file, screenshots or a live site, and gives each reference a job, this one for colour, that one for density, rather than picking a favourite",
+      "Takes a Figma file, screenshots or a live site. Gives each reference a job, this one for colour, that one for density, rather than picking a favourite",
       "Where 2 references disagree it says so and asks, instead of averaging them into a fourth thing nobody chose",
       "Derives colour, type, spacing, shape and component states, and checks every contrast pair before writing the file",
       "Records which reference each decision came from, so in 6 months the file can answer why as well as what",
@@ -222,7 +222,7 @@ export const USES: { who: string; what: string }[] = [
 export const AFTER: { step: string; what: string }[] = [
   {
     step: "Compile the brief",
-    what: "Camp 5 opens by putting everything upstream into one file, `BRIEF.md`. Scope with the out list kept word for word, phases you could ship on their own, how it should feel, the decisions already made, and what is still missing.",
+    what: "Camp 5 opens by putting everything upstream into one file, `BRIEF.md`. It holds scope with the out list kept word for word, and phases you could ship on their own. It says how it should feel, the decisions already made, and what is still missing.",
   },
   {
     step: "Build from it",
@@ -238,14 +238,14 @@ export const AFTER: { step: string; what: string }[] = [
   },
   {
     step: "Verify what went live",
-    what: "`/summit` checks the deployment: analytics, metadata, performance, accessibility. It writes `SUMMIT.md` and leaves 3 questions dated ninety days out.",
+    what: "`/summit` checks the deployment: analytics, metadata, performance, accessibility. It writes `SUMMIT.md` and leaves 3 questions dated 90 days out.",
   },
   {
     step: "Close it out",
     what: "`/retro` covers what worked, what did not, and 3 things to keep. `/handoff` packages the folder for a client and verifies the access transfers. Neither runs on its own, so you pick the moment.",
   },
   {
-    step: "Ninety days on, then a second version",
-    what: "Answer the `SUMMIT.md` questions cold. When you come back, `/pack` opens cycle 2 on the same project: it archives the old map and retro, carries the research, decisions and design across, and resets only the camp progress.",
+    step: "After 90 days, a second version",
+    what: "Answer the `SUMMIT.md` questions cold. When you come back, `/pack` opens cycle 2 on the same project. It archives the old map and retro. It carries the research, decisions and design across, and resets only the camp progress.",
   },
 ];

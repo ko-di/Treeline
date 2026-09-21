@@ -142,7 +142,7 @@ export default function Setup() {
           a closing summary of which answers are still thin.
         </p>
         <p>
-          26 skills come in the download. You have to remember 2:{" "}
+          The download holds 26 skills. You have to remember 2:{" "}
           <code>/pack</code>, then <code>/trail</code>. The rest are run for you
           at the point they apply, or offered once the deploy is live.
         </p>
@@ -192,7 +192,7 @@ export default function Setup() {
         </p>
         <p className="meta">
           <code>BUILDING.md</code> comes in the download. It says what to do with
-          each file, and holds the prompts for handing the brief to Claude Code,
+          each file. It holds the prompts for handing the brief to Claude Code,
           Claude, v0, Figma Make or a developer.
         </p>
         <Next href="/camps" label="What each camp does" />

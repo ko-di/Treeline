@@ -1,5 +1,7 @@
-# Runs on every push and pull request: lint, types, and a full build, which
-# also checks the site's kit version against the kit on GitHub (prebuild).
+# Runs on every push and pull request: lint, the writing guide, types, and a
+# full build, which also checks the site's kit version (prebuild).
+# scripts/lint-writing.py is a copy; the source is forest-studio/scripts, and
+# release.sh refreshes it here at each release.
 name: checks
 
 on:
@@ -17,5 +19,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint
+      - name: Every word on the site follows the writing guide
+        run: python3 scripts/lint-writing.py src
       - run: npx tsc --noEmit
       - run: npm run build

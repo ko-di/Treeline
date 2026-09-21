@@ -8,7 +8,8 @@
     "start": "next start",
     "prebuild": "node scripts/check-kit-version.mjs",
     "lint": "eslint",
-    "check": "node scripts/check-kit-version.mjs"
+    "check": "node scripts/check-kit-version.mjs && python3 scripts/lint-writing.py src",
+    "lint:copy": "python3 scripts/lint-writing.py src"
   },
   "dependencies": {
     "next": "16.2.4",
