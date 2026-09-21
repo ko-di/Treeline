@@ -51,6 +51,11 @@ export default function Privacy() {
           is kept on your own machine. Say no, or never answer, and forest sends
           nothing at all.
         </p>
+        <p>
+          Why it is asked at all: the counts show how far projects get and
+          which camp they stop at. That decides what gets built next, instead
+          of a guess.
+        </p>
         <p>If you said yes, a report holds 5 things:</p>
         <ul className="dashed">
           <li>A random number forest made up on your machine, so 2 reports can be told apart. Nothing about you, your computer or your project goes into it</li>
