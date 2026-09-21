@@ -132,7 +132,7 @@ export const CHECKS: { when: string; what: string }[] = [
  * after every release. A site describing a version nobody can download is worse
  * than no version at all.
  */
-export const KIT_VERSION = "1.1.0";
+export const KIT_VERSION = "1.2.0";
 
 /**
  * 20-5 commands exist; 2 have to be remembered. The list below also has

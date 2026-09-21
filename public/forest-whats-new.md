@@ -11,6 +11,14 @@ Each entry says 2 things up front:
 
 ---
 
+## 1.2.0
+
+Breaking: no · Project update: no
+
+- Camp 4 offers design work that fits your team and your time, and hands to `/sketch` after.
+- Everything forest offers now says when to use it, what you get, and how you can tell it is done.
+- `/review` asks whether the design solves the problem in the brief before it checks how it looks.
+
 ## 1.1.0
 
 Breaking: yes · Project update: yes
