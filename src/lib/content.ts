@@ -162,7 +162,7 @@ export const CHECKS: { when: string; what: string }[] = [
  * after every release. A site describing a version nobody can download is worse
  * than no version at all.
  */
-export const KIT_VERSION = "1.3.0";
+export const KIT_VERSION = "1.3.1";
 
 /**
  * 20-5 commands exist; 2 have to be remembered. The list below also has
@@ -185,6 +185,7 @@ export const COMMANDS: {
       { cmd: "/map", does: "Show what is filled in and what is not" },
       { cmd: "/camp <name>", does: "Jump to one camp and work there, out of order" },
       { cmd: "/rationale", does: "Record why you made a call, the moment you make it" },
+      { cmd: "/publish", does: "Folder to live address, once per project. Git, a host, a domain" },
     ],
   },
   {
@@ -198,7 +199,7 @@ export const COMMANDS: {
       { cmd: "/review", does: "Each phase of Camp 5. The 5-check quality pass, findings first" },
       { cmd: "/test", does: "Each phase of Camp 5. Writes and runs the tests for that phase" },
       { cmd: "/benchmark", does: "Offered in Camp 2. Who else solves this, doing nothing included" },
-      { cmd: "/ship", does: "Camp 6. Checks, commit, push. The first of 5 commands there" },
+      { cmd: "/ship", does: "Camp 6. Checks, commit, push. The first of 6 commands there" },
       { cmd: "/a11y-audit", does: "Run by /summit. Accessibility to a standard, with a report" },
     ],
   },
@@ -212,6 +213,7 @@ export const COMMANDS: {
       { cmd: "/animate", does: "Review the motion that's there, and what's missing" },
       { cmd: "/overdrive", does: "One ambitious moment, proposed first" },
       { cmd: "/system", does: "Document the design system as built, and where it drifted" },
+      { cmd: "/debug", does: "What broke and why. Says what the error means, then finds the cause" },
       { cmd: "/resupply", does: "Bring in the newest version of forest. Claude names it when one is out" },
     ],
   },

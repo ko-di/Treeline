@@ -11,6 +11,15 @@ Each entry says 2 things up front:
 
 ---
 
+## 1.3.1
+
+Breaking: no · Project update: no
+
+- Fixes 1.3.0. If you picked anything other than a finished thing at intake, the trail did not actually stop where it said it would.
+- Proof the problem is real now ends at Camp 2, as promised. The gate closes it rather than opening Camp 3.
+- Documents and a fast prototype now get the brief compiled at their own finish line, rather than at a camp they never walk.
+- `/compass` and `/map` know when a project is finished, and stop counting camps you were never going to walk.
+
 ## 1.3.0
 
 Breaking: no · Project update: no

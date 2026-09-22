@@ -99,8 +99,10 @@ export default function Overview() {
           <li>Type <code>/pack</code>.</li>
         </ol>
         <p className="meta">
-          You need the <a href="https://claude.com/download">Claude app</a>. No
-          Terminal, no GitHub account, nothing to install.
+          You need the <a href="https://claude.com/download">Claude app</a> to
+          start. No Terminal and nothing to install. Putting a site online later
+          needs a free GitHub account, and <code>/publish</code> sets that up
+          with you.
         </p>
       </section>
 
@@ -131,9 +133,9 @@ export default function Overview() {
           allowed to do. Change your mind and you carry on from where you are.
         </p>
         <p className="meta">
-          It does not cover how you reach people. Camp 3 records your plan for
-          that and stops there. It does not draw your logo either. That&rsquo;s a
-          refusal, not a gap.
+          Camp 3 records your plan for reaching people, and <code>/reach</code>{" "}
+          works it up after you ship. It does not draw your logo. That is a
+          refusal rather than a gap.
         </p>
       </section>
 
@@ -192,8 +194,9 @@ export default function Overview() {
           reads your notes and returns press on, reroute, or turn back. It
           weighs each claim by whether you watched it, heard it, reasoned it, or
           assumed it. Every reading names at least 2 routes onward, and you can
-          overrule any of them. <code>/ship</code> writes down your override and
-          quotes it back to you, against what you said you would regret.
+          overrule any of them. <code>/weather</code> writes your override down,
+          and <code>/ship</code> reads it back before anything ships, against
+          what you said you would regret.
         </p>
         <p>
           Ship is the last camp. Before anything goes out, <code>/ship</code>{" "}
