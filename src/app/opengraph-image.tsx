@@ -5,7 +5,7 @@ import { BANNER_PATH } from "@/components/Banner";
  * The preview shown when a link to the site is shared. Built at compile time
  * from the same banner path and palette as the page, so it can't drift from it.
  */
-export const alt = "forest: an idea through research, requirements, a design direction and a build.";
+export const alt = "Forest: an idea through research, requirements, a design direction and a build.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

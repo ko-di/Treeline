@@ -3,19 +3,19 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "forest · scale design without losing craft",
+  title: "Forest · scale design without losing craft",
   description:
-    "forest takes an idea through research, requirements, a design direction and a build, to something you can push. 6 camps, inside Claude Code. From k-d studio.",
+    "Forest takes an idea through research, requirements, a design direction and a build, to something you can push. 6 camps, inside Claude Code. From k-d studio.",
   metadataBase: new URL("https://treeline-sand.vercel.app"),
   openGraph: {
-    title: "forest · scale design without losing craft",
+    title: "Forest · scale design without losing craft",
     description:
       "An idea through research, requirements, a design direction and a build. 6 camps, inside Claude Code.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "forest",
+    title: "Forest",
     description: "Scale design without losing craft.",
   },
 };

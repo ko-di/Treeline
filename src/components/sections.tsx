@@ -51,3 +51,12 @@ export function Next({ href, label }: { href: string; label: string }) {
     </p>
   );
 }
+
+/** The same link, pointing back up. Quieter than Next, which leads onward. */
+export function Back({ href, label }: { href: string; label: string }) {
+  return (
+    <p className="next back">
+      <Link href={href}>← {label}</Link>
+    </p>
+  );
+}

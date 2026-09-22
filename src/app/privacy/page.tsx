@@ -37,7 +37,7 @@ export default function Privacy() {
       </section>
 
       <section>
-        <p className="label">forest, on your machine</p>
+        <p className="label">Forest, on your machine</p>
         <h2>One check you cannot turn off, and one report you can.</h2>
         <p>
           <strong>The version check.</strong> Once a day at most, forest asks
