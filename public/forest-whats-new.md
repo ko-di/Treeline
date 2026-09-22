@@ -15,16 +15,7 @@ Each entry says 2 things up front:
 
 Breaking: no · Project update: no
 
-- Fixes 1.3.0. If you picked anything other than a finished thing at intake, the trail did not actually stop where it said it would.
-- Proof the problem is real now ends at Camp 2, as promised. The gate closes it rather than opening Camp 3.
-- Documents and a fast prototype now get the brief compiled at their own finish line, rather than at a camp they never walk.
-- `/compass` and `/map` know when a project is finished, and stop counting camps you were never going to walk.
-
-## 1.3.0
-
-Breaking: no · Project update: no
-
-- `/pack` asks what you want at the end. The trail's finish line moves to match, and every camp stays open either way.
+- `/pack` asks what you want at the end: proof the problem is real, documents somebody else builds from, something working fast, or a finished thing live. The trail stops where you said, and every camp stays open either way.
 - `/publish` takes a project from a folder to a live address: git, a code host, the repository, hosting, secrets, a domain.
 - `/debug` reads an error, says what it means in plain words, then finds the cause under the symptom.
 - Every check that stops you now names where to go next.
