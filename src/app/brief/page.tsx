@@ -59,7 +59,7 @@ written — they were derived from references the user chose, not invented here.
 The ones this build leans on most:
 - colour.surface, colour.ink, colour.ink-quiet. There is no red in the palette,
   which is the anti-pattern above turned into a token
-- type.body 16/1.55, type.meta 14. Two sizes, no third
+- type.body 16/1.55, type.meta 14. Only 2 sizes, no third
 - space.gutter 24, space.row 14. The invoice list is rows, not cards
 
 ## Phases

@@ -23,7 +23,7 @@ export default function Overview() {
           Forest turns it into something you can build, with the thinking behind
           it written down as you go. It runs inside{" "}
           <a href="https://claude.com/claude-code">Claude Code</a>{" "}
-          as a set of skills. There&rsquo;s no separate app.
+          as a set of commands. There&rsquo;s no separate app.
         </p>
         <p>
           It asks what you want at the end, and stops there. That might be
@@ -129,7 +129,7 @@ export default function Overview() {
         </table>
         <p>
           Every camp stays open whichever you pick. The finish line changes
-          what gets offered and what the kit calls done, never what you are
+          what gets offered and what counts as done, never what you are
           allowed to do. Change your mind and you carry on from where you are.
         </p>
         <p className="meta">
@@ -162,7 +162,7 @@ export default function Overview() {
         <p className="label">The camps</p>
         <table className="camps">
           <thead>
-            <tr><th>Camp</th><th>What it does</th><th>Output</th></tr>
+            <tr><th>Camp</th><th>What it does</th><th>Writes</th></tr>
           </thead>
           <tbody>
             {CAMPS.map((s) => (

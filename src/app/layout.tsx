@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { SITE } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Forest · scale design without losing craft",
   description:
     "Forest takes an idea through research, requirements, a design direction and a build, to something you can push. 6 camps, inside Claude Code. From k-d studio.",
-  metadataBase: new URL("https://treeline-sand.vercel.app"),
+  metadataBase: new URL(SITE),
   openGraph: {
     title: "Forest · scale design without losing craft",
     description:

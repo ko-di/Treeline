@@ -34,7 +34,7 @@ export const CAMPS: Camp[] = [
     use: "Start here. `/pack` scaffolds the folder and asks the questions the rest builds on.",
     does: [
       "Sets your role, and how much explanation you want alongside the work",
-      "Asks who it helps — someone you've actually met, not a category. Recording that you do not know yet is a normal answer",
+      "Asks who it helps — someone you have met, not a category. Recording that you do not know yet is a normal answer",
       "If you do not have a concrete idea, runs an idea hunt instead of pressing on with a blank one",
       "Drafts the project map, which every later camp reads and updates",
     ],
@@ -139,11 +139,11 @@ export const CAMPS: Camp[] = [
 export const CHECKS: { when: string; what: string }[] = [
   {
     when: "You name an audience like “small businesses” or “creators”",
-    what: "Asks for someone you've actually met. Recording that you do not know yet is a normal answer.",
+    what: "Asks for someone you have met. Recording that you do not know yet is a normal answer.",
   },
   {
     when: "You have fewer than 3 research notes",
-    what: "Writes up what struck you as open questions rather than themes. 3 is where a pattern becomes distinguishable from a one-off.",
+    what: "Writes up what struck you as open questions rather than themes. 3 is where a pattern separates from a one-off.",
   },
   {
     when: "You ask it to make a logo",
@@ -165,8 +165,8 @@ export const CHECKS: { when: string; what: string }[] = [
 export const KIT_VERSION = "1.3.1";
 
 /**
- * 20-5 commands exist; 2 have to be remembered. The list below also has
- * the /weather gate, which is not a command. The kit runs most of them
+ * 28 commands exist; 2 have to be remembered. The list below also has
+ * the /weather gate, which is not a command. forest runs most of them
  * for you at the point they apply, so listing them flat made the workflow read
  * heavier than it is. Grouped by who invokes them, not alphabetically.
  */
@@ -177,7 +177,7 @@ export const COMMANDS: {
 }[] = [
   {
     group: "The ones you type",
-    note: "2 of these are the whole workflow. The rest are there when you want them.",
+    note: "`/pack` then `/trail` is the whole workflow. The rest are there when you want them.",
     items: [
       { cmd: "/pack", does: "Set up the project and run intake. The only way in" },
       { cmd: "/trail", does: "Move through the camps in order, running the right command at each" },
@@ -219,7 +219,7 @@ export const COMMANDS: {
   },
   {
     group: "The ones offered at the summit",
-    note: "Shipping is not the last thing that happens. None of these chains automatically, so you pick the moment.",
+    note: "4 things happen after you ship. None of them chains automatically, so you pick the moment.",
     items: [
       { cmd: "/summit", does: "Verify what actually went live, and write SUMMIT.md" },
       { cmd: "/retro", does: "What worked, what did not, what to keep" },
@@ -236,7 +236,7 @@ export const USES: { who: string; what: string }[] = [
   },
   {
     who: "You are early-stage and need to raise",
-    what: "`EVIDENCE.md` writes out why the problem is real, for anyone who asks, including an investor.",
+    what: "`EVIDENCE.md` sets out why the problem is real, for anyone who asks, including an investor.",
   },
   {
     who: "You have an existing product and a new idea to add to it",
@@ -252,7 +252,7 @@ export const USES: { who: string; what: string }[] = [
   },
   {
     who: "You are working for a client",
-    what: "Client mode adds a handoff package and names what was deliberately left out.",
+    what: "Client mode adds a handoff package and names what you left out on purpose.",
   },
 ];
 export const AFTER: { step: string; what: string }[] = [

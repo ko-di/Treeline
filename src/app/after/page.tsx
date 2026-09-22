@@ -3,9 +3,9 @@ import { Footer, Next, Ticks } from "@/components/sections";
 import { AFTER } from "@/lib/content";
 
 export const metadata = {
-  title: "After the documents · forest",
+  title: "If you're building · forest",
   description:
-    "What happens once the early camps are filled in: building from the brief, shipping, verifying, and closing out.",
+    "For the outcome that ends in a build: working from the brief, shipping, verifying what went live, and closing out.",
 };
 
 export default function After() {
@@ -16,16 +16,17 @@ export default function After() {
       <main>
 
       <header>
-        <h1>After the documents</h1>
+        <h1>If you&rsquo;re building</h1>
         <p className="lede">
-          The written camps are the halfway point, not the end. From here the
-          kit builds, ships and checks what went live.
+          This page is for one of the 4 outcomes: a finished thing, live. If
+          you came for proof, documents or a fast prototype, your trail already
+          finished and this is the part you do not need.
         </p>
       </header>
 
       <section>
-        <p className="label">The second half</p>
-        <h2>From documents to something live.</h2>
+        <p className="label">From here on</p>
+        <h2>Documents to something live.</h2>
         <ol className="steps">
           {AFTER.map((a, i) => (
             <li key={a.step}>

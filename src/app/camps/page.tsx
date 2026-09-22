@@ -30,8 +30,8 @@ export default function Camps() {
           <li>Walk them in order with <code>/trail</code>.</li>
           <li>Jump straight to one with <code>/camp</code>.</li>
           <li>
-            Shape runs on its own whenever references turn up. It is not gated
-            to its place in the order.
+            Shape runs whenever you have references: a Figma file,
+            screenshots, a live site. You do not have to reach Camp 4 first.
           </li>
         </ul>
       </section>
@@ -50,7 +50,7 @@ export default function Camps() {
               ))}
             </ul>
             <p className="meta out">
-              <span className="dim">Output:</span> <code>{s.output}</code>
+              <span className="dim">Writes:</span> <code>{s.output}</code>
             </p>
           </div>
         ))}

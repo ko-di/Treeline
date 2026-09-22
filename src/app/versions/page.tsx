@@ -6,7 +6,7 @@ import { readReleases } from "@/lib/whats-new";
 export const metadata = {
   title: "What's new · forest",
   description:
-    "What changed in the last 3 versions of forest, and what a project already on the trail needs to do.",
+    "What changed in the most recent versions of forest, and what you need to do on a project already on the trail.",
 };
 
 /**
@@ -40,7 +40,7 @@ export default function Versions() {
         <h1>What&rsquo;s new</h1>
         <p className="lede">
           What changed in the last {shown.length} versions of forest, and what
-          a project already on the trail needs to do. <code>/resupply</code>{" "}
+          you need to do on a project already on the trail. <code>/resupply</code>{" "}
           reads the same notes to you inside Claude Code, starting from
           whichever version you are on.
         </p>
@@ -79,9 +79,9 @@ export default function Versions() {
 
       <section>
         <p className="meta">
-          The download is always this version. A project on an older one is
-          offered the update at the start of a session, and nothing changes
-          until you say yes.
+          The download is always this version. On an older one, forest offers
+          you the update at the start of a session. Nothing changes until you
+          say yes.
         </p>
         <Next href="/setup" label="Setup and updates" />
       </section>

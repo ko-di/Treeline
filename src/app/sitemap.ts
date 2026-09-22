@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE = "https://treeline-sand.vercel.app";
+import { SITE } from "@/lib/site";
 
 /** Every page, for search engines. Add a route here when one is added. */
 export default function sitemap(): MetadataRoute.Sitemap {
