@@ -98,6 +98,27 @@ CODE_LANGS = {"bash", "sh", "json", "yaml", "yml", "ts", "tsx", "js", "jsx", "cs
 
 QUOTED = r"\"[^\"]*\"|“[^”]*”|'[^'\n]*'|‘[^’]*’"
 
+# A marked-up exception, for the one rule a page can have a reason to suspend.
+# Written where it applies rather than listed in here, so the reason sits next
+# to the text it excuses. Nothing else can be suspended this way.
+ALLOW = re.compile(r"lint-writing:\s*(allow first person|end)")
+
+
+def allowed_lines(raw):
+    """Line numbers between an 'allow first person' marker and its 'end'."""
+    out, start = set(), None
+    for n, line in enumerate(raw.split("\n"), 1):
+        m = ALLOW.search(line)
+        if not m:
+            continue
+        if m.group(1) == "end":
+            if start is not None:
+                out |= set(range(start, n + 1))
+            start = None
+        else:
+            start = n
+    return out
+
 
 # ------------------------------------------------------------ extraction
 
@@ -200,7 +221,7 @@ def title_case(text):
     return len(caps) >= 2
 
 
-def check_lines(lines, hits, prefix="", frontmatter_ok=True):
+def check_lines(lines, hits, prefix="", frontmatter_ok=True, allow_fp=frozenset()):
     frontmatter = False
     for i, (n, line) in enumerate(lines):
         s = line.strip()
@@ -254,7 +275,7 @@ def check_lines(lines, hits, prefix="", frontmatter_ok=True):
             hits[prefix + "heading in Title Case"].append(n)
 
         # Voice
-        if not frontmatter and re.search(r"\b(I|I'm|I'll|I've|I'd|my|we|we'll|we're|we've|our|us)\b", unq):
+        if not frontmatter and n not in allow_fp and re.search(r"\b(I|I'm|I'll|I've|I'd|my|we|we'll|we're|we've|our|us)\b", unq):
             hits[prefix + "first person"].append(n)
 
         # Vocabulary
@@ -300,14 +321,15 @@ def check_sentences(paras, hits, prefix=""):
 def check(path):
     hits = collections.defaultdict(list)
     raw = path.read_text()
+    allow_fp = allowed_lines(raw)
     if path.suffix == ".md":
         lines = md_prose(raw)
-        check_lines(lines, hits)
+        check_lines(lines, hits, allow_fp=allow_fp)
         check_sentences(lines, hits)
         check_lines(md_templates(raw), hits, prefix="template: ", frontmatter_ok=False)
     else:
         lines, paras = tsx_prose(raw)
-        check_lines(lines, hits, frontmatter_ok=False)
+        check_lines(lines, hits, frontmatter_ok=False, allow_fp=allow_fp)
         check_sentences(paras, hits)
         for n, h in tsx_headings(raw):
             if title_case(h):

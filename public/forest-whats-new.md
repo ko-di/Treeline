@@ -11,6 +11,16 @@ Each entry says 2 things up front:
 
 ---
 
+## 1.3.0
+
+Breaking: no · Project update: no
+
+- `/pack` asks what you want at the end. The trail's finish line moves to match, and every camp stays open either way.
+- `/publish` takes a project from a folder to a live address: git, a code host, the repository, hosting, secrets, a domain.
+- `/debug` reads an error, says what it means in plain words, then finds the cause under the symptom.
+- Every check that stops you now names where to go next.
+- forest asks once whether it may send a few anonymous counts, off unless you say yes. They show which camp people stall at. Nothing from your project is ever sent, and the full account is on the privacy page.
+
 ## 1.2.0
 
 Breaking: no · Project update: no

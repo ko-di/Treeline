@@ -11,6 +11,14 @@ type Camp = {
   slug: string;
   name: string;
   summary: string;
+  /** One line for the loop diagram, where there is room for about 12 words. */
+  short: string;
+  /**
+   * Set on the 4 camps a project can finish at, per the kit's outcome field.
+   * `want` is what the person came for, `leave` is what they hold when they
+   * stop here. Frame and Build have none: nobody sets out to stop at either.
+   */
+  exit?: { want: string; leave: string };
   use: string;
   does: string[];
   output: string;
@@ -22,10 +30,11 @@ export const CAMPS: Camp[] = [
     slug: "frame",
     name: "Frame",
     summary: "Your role, who this helps, and the first shape of the idea.",
+    short: "Start here. Sets your role, who it's for, drafts the project map.",
     use: "Start here. `/pack` scaffolds the folder and asks the questions the rest builds on.",
     does: [
       "Sets your role, and how much explanation you want alongside the work",
-      "Asks who it helps, and for someone you have actually met rather than a category. Recording that you do not know yet is a normal answer",
+      "Asks who it helps — someone you've actually met, not a category. Recording that you do not know yet is a normal answer",
       "If you do not have a concrete idea, runs an idea hunt instead of pressing on with a blank one",
       "Drafts the project map, which every later camp reads and updates",
     ],
@@ -36,6 +45,11 @@ export const CAMPS: Camp[] = [
     slug: "learn",
     name: "Learn",
     summary: "Conversations, what they add up to, then an honest reading.",
+    short: "Interviews, notes and patterns. The camp most often skipped.",
+    exit: {
+      want: "Proof the problem is real",
+      leave: "`project/EVIDENCE.md` and a weather reading",
+    },
     use: "The camp most often skipped, and the one the gate at the end of it measures.",
     does: [
       "`/scout` drafts an interview guide and waits while you go and have the conversations",
@@ -50,11 +64,16 @@ export const CAMPS: Camp[] = [
     slug: "decide",
     name: "Decide",
     summary: "Requirements, each written so someone can tell when it is done.",
+    short: "Turns what you learned into numbered requirements.",
+    exit: {
+      want: "Documents somebody else builds from",
+      leave: "A PRD and `project/BRIEF.md`",
+    },
     use: "Runs once the weather reading says press on.",
     does: [
       "Turns what you learned into numbered requirements",
-      "Each one names who it serves, and the condition that would show it is finished",
-      "Scope splits 3 ways, in, out and later, and the out list is the half that holds",
+      "Each one names who it serves, and the condition that would show it's finished",
+      "Scope splits 3 ways: in, out and later. The out list is the half that holds",
     ],
     output: "project/3-decide/prd.md",
   },
@@ -63,6 +82,11 @@ export const CAMPS: Camp[] = [
     slug: "shape",
     name: "Shape",
     summary: "A direction derived from your references, not described in the abstract.",
+    short: "References become tokens: colour, type, spacing, states.",
+    exit: {
+      want: "Something working, fast, to show people",
+      leave: "A design direction and the brief, built elsewhere",
+    },
     use: "Not gated to this point. It runs whenever imagery turns up.",
     does: [
       "Takes a Figma file, screenshots or a live site. Gives each reference a job, this one for colour, that one for density, rather than picking a favourite",
@@ -80,6 +104,7 @@ export const CAMPS: Camp[] = [
     slug: "build",
     name: "Build",
     summary: "Everything upstream becomes one brief, then the build works phase by phase.",
+    short: "Works the plan phase by phase, checked against the tokens.",
     use: "`/trail` walks it in order; `/camp build` goes straight there.",
     does: [
       "Compiles `BRIEF.md` first: scope, phases, feel and the decisions already made, in one file that stands alone",
@@ -95,6 +120,11 @@ export const CAMPS: Camp[] = [
     slug: "ship",
     name: "Ship",
     summary: "Checks, deploy, verification, and what you would do differently.",
+    short: "Ships it, then asks what you will regret in 3 weeks.",
+    exit: {
+      want: "A finished thing, live",
+      leave: "The whole trail, built and shipped here",
+    },
     use: "`/ship`, then `/summit`, `/retro`, `/reach`, and `/handoff` for client work.",
     does: [
       "Before any of it, `/ship` asks what you expect to regret in 3 weeks and records the answer",
@@ -109,7 +139,7 @@ export const CAMPS: Camp[] = [
 export const CHECKS: { when: string; what: string }[] = [
   {
     when: "You name an audience like “small businesses” or “creators”",
-    what: "Asks for someone you have actually met, and offers to record that you do not know yet, a normal answer at intake.",
+    what: "Asks for someone you've actually met. Recording that you do not know yet is a normal answer.",
   },
   {
     when: "You have fewer than 3 research notes",
@@ -117,10 +147,10 @@ export const CHECKS: { when: string; what: string }[] = [
   },
   {
     when: "You ask it to make a logo",
-    what: "Declines, and points at the parts of brand it can help with: voice, positioning, colour, type.",
+    what: "Declines, and points at the parts of brand it can help with instead: voice, positioning, colour, type.",
   },
   {
-    when: "You are about to ship",
+    when: "You're about to ship",
     what: "Asks what you expect to regret in 3 weeks, and records whether you fixed it or accepted it.",
   },
 ];
@@ -132,7 +162,7 @@ export const CHECKS: { when: string; what: string }[] = [
  * after every release. A site describing a version nobody can download is worse
  * than no version at all.
  */
-export const KIT_VERSION = "1.2.0";
+export const KIT_VERSION = "1.3.0";
 
 /**
  * 20-5 commands exist; 2 have to be remembered. The list below also has
@@ -203,12 +233,16 @@ export const USES: { who: string; what: string }[] = [
     what: "Frame through to requirements in a sitting, then a brief to build from.",
   },
   {
-    who: "You need to know the problem is real",
-    what: "The gate reads your evidence by where it came from, not how it reads, and can tell you to turn back. `EVIDENCE.md` writes the answer out for anyone who asks, including an investor.",
+    who: "You are early-stage and need to raise",
+    what: "`EVIDENCE.md` writes out why the problem is real, for anyone who asks, including an investor.",
   },
   {
-    who: "You have been building a while and never wrote it down",
+    who: "You have an existing product and a new idea to add to it",
     what: "Run intake against what exists. The gaps it reports are usually the parts nobody agrees on.",
+  },
+  {
+    who: "You need to know the problem is real",
+    what: "The gate reads your evidence by where it came from, not how it reads, and can tell you to turn back.",
   },
   {
     who: "You are handing the work to someone else",

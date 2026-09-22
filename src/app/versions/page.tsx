@@ -6,7 +6,7 @@ import { readReleases } from "@/lib/whats-new";
 export const metadata = {
   title: "What's new · forest",
   description:
-    "What changed in the current version of forest, and what a project already on the trail needs to do.",
+    "What changed in the last 3 versions of forest, and what a project already on the trail needs to do.",
 };
 
 /**
@@ -14,16 +14,21 @@ export const metadata = {
  * one the kit's release script publishes and the one /resupply reads aloud,
  * so this page and the terminal always say the same thing about a release.
  *
- * Only the current release is shown. The file keeps the older entries on
- * purpose: /resupply reads every entry between a project's version and the
- * latest, so someone 2 versions behind still sees each Breaking flag.
+ * The current release and the 2 before it. The file keeps older entries still:
+ * /resupply reads every entry between a project's version and the latest, so
+ * someone further behind than that still sees each Breaking flag in the
+ * terminal, whatever this page shows.
  */
 export default function Versions() {
-  const current = readReleases().find((r) => r.version === KIT_VERSION);
-  if (!current) {
+  const all = readReleases();
+  const at = all.findIndex((r) => r.version === KIT_VERSION);
+  if (at === -1) {
     // Same gate as release.sh: a version with no notes does not ship.
     throw new Error(`public/forest-whats-new.md has no '## ${KIT_VERSION}' entry.`);
   }
+  // Slice rather than take the first 3, so the page follows KIT_VERSION even
+  // if the file ever carries an entry newer than the release the site describes.
+  const shown = all.slice(at, at + 3);
 
   return (
     <>
@@ -34,9 +39,10 @@ export default function Versions() {
       <header>
         <h1>What&rsquo;s new</h1>
         <p className="lede">
-          What changed in the current version of forest, and what a project
-          already on the trail needs to do. <code>/resupply</code> reads the
-          same notes to you inside Claude Code.
+          What changed in the last {shown.length} versions of forest, and what
+          a project already on the trail needs to do. <code>/resupply</code>{" "}
+          reads the same notes to you inside Claude Code, starting from
+          whichever version you are on.
         </p>
         <p className="meta">
           Breaking says whether something you rely on works differently.
@@ -45,26 +51,31 @@ export default function Versions() {
         </p>
       </header>
 
-      <section id={current.anchor}>
-        <p className="label">{current.version} · current</p>
-        {current.breaking !== null && current.projectUpdate !== null && (
-          <p className="meta">
-            Breaking: {current.breaking ? "yes" : "no"} · Project update:{" "}
-            {current.projectUpdate ? "yes" : "no"}
+      {shown.map((r, n) => (
+        <section key={r.version} id={r.anchor}>
+          <p className="label">
+            {r.version}
+            {n === 0 ? " · current" : ""}
           </p>
-        )}
-        {current.blocks.map((b, i) =>
-          b.kind === "p" ? (
-            <p key={i}><Ticks>{b.text}</Ticks></p>
-          ) : (
-            <ul key={i} className="dashed spaced">
-              {b.items.map((item) => (
-                <li key={item}><Ticks>{item}</Ticks></li>
-              ))}
-            </ul>
-          ),
-        )}
-      </section>
+          {r.breaking !== null && r.projectUpdate !== null && (
+            <p className="meta">
+              Breaking: {r.breaking ? "yes" : "no"} · Project update:{" "}
+              {r.projectUpdate ? "yes" : "no"}
+            </p>
+          )}
+          {r.blocks.map((b, i) =>
+            b.kind === "p" ? (
+              <p key={i}><Ticks>{b.text}</Ticks></p>
+            ) : (
+              <ul key={i} className="dashed spaced">
+                {b.items.map((item) => (
+                  <li key={item}><Ticks>{item}</Ticks></li>
+                ))}
+              </ul>
+            ),
+          )}
+        </section>
+      ))}
 
       <section>
         <p className="meta">
